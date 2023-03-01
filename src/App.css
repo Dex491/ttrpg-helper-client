@@ -1,7 +1,5 @@
 #root {
-	/* max-width: 1280px;
-	margin: 0 auto;
-	padding: 2rem; */
+	padding: 2rem;
 	text-align: center;
 }
 
@@ -109,12 +107,10 @@
 
 .other-profs {
 	grid-area: other-profs;
-	/* border: solid black 2px; */
 }
 
 .base-stats {
 	grid-area: base-stats;
-	/* border: solid black 2px; */
 	border-radius: 10px;
 	background: grey;
 }
@@ -125,7 +121,7 @@
 
 .health-equips {
 	grid-area: health-equips;
-	border: solid black 2px;
+	/* border: solid black 2px; */
 }
 
 .rp-traits {
@@ -191,7 +187,6 @@
 	display: flex;
 	font-weight: bold;
 	font-size: 12px;
-	/* justify-content: center; */
 	align-content: center;
 	border: solid black 2px;
 	border-radius: 5px;
@@ -227,7 +222,6 @@
 .skills ul {
 	display: flex;
 	flex-direction: column;
-	/* justify-content: start; */
 	align-items: start;
 	border: solid black 2px;
 	border-radius: 5px;
@@ -251,8 +245,6 @@
 .saves input.prof,
 .skills input.prof {
 	width: 15px;
-	/* height: 15px; */
-	/* margin: 2px 0 0 3px; */
 }
 
 .saves input.skill-mod,
@@ -261,7 +253,6 @@
 	height: 11px;
 	text-align: center;
 	font-size: x-small;
-	/* padding: 0; */
 	border: 0;
 	margin-top: 3px;
 }
@@ -310,6 +301,50 @@
 	font-weight: bold;
 	align-self: center;
 	font-size: 14px;
-	/* margin-top: 1px; */
 	height: 10px;
+}
+
+/* CS HEALTH AND EQUIPMENT */
+
+.health-box {
+	height: 297px;
+}
+
+.attacks-box {
+	height: 301px;
+}
+
+.health-box,
+.attacks-box {
+	margin-bottom: 5px;
+	border: solid black 2px;
+	border-radius: 5px;
+}
+
+.equips-box {
+	height: 259px;
+	border: solid black 2px;
+	border-radius: 5px;
+}
+
+.health-box .top-line {
+	display: flex;
+}
+
+.top-line > li {
+	width: 66px;
+	height: 66px;
+}
+
+.top-line > li > input {
+	width: 56px;
+	height: 45px;
+}
+
+.top-line > li > label {
+	width: 56px;
+	height: 10px;
+	font-variant: small-caps;
+	font-weight: bold;
+	font-size: 12px;
 }

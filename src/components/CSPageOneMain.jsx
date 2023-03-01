@@ -74,7 +74,26 @@ export default function CSPageOneMain() {
 					</ul>
 				</div>
 			</div>
-			<div className="health-equips"></div>
+			<div className="health-equips">
+				<div className="health-box">
+					<ul className="top-line">
+						<li className="armour-class-box">
+							<input id="armour-class" type="text" />
+							<label htmlFor="armour-class">armour class</label>
+						</li>
+						<li className="initiative-box">
+							<input id="initiative" type="text" />
+							<label htmlFor="initiative">initiative</label>
+						</li>
+						<li className="speed-box">
+							<input id="speed" type="text" />
+							<label htmlFor="speed">speed</label>
+						</li>
+					</ul>
+				</div>
+				<div className="attacks-box"></div>
+				<div className="equips-box"></div>
+			</div>
 			<div className="rp-traits"></div>
 		</div>
 	);
