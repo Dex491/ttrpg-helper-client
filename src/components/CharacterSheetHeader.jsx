@@ -8,7 +8,7 @@ export default function CharacterSheetHeader() {
 			<div className="char-info">
 				<ul>
 					<li>
-						<input id="level" placeholder="Bard 2, Rogue 1" />
+						<input id="level" placeholder="Bard L2, Rogue L1" />
 						<label htmlFor="level">class & level</label>
 					</li>
 					<li>

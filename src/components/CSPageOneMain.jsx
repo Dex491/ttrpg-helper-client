@@ -36,7 +36,17 @@ export default function CSPageOneMain() {
 					</li>
 				</ul>
 			</div>
-			<div className="skills"></div>
+			<div className="skills">
+				<div className="insp-prof">
+					<div className="insp-box">
+						<input id="insp" type="checkbox" />
+						<label htmlFor="insp">Inspiration</label>
+					</div>
+					<div className="prof"></div>
+				</div>
+				<div className="saves"></div>
+				<div className="skills"></div>
+			</div>
 			<div className="health-equips"></div>
 			<div className="rp-traits"></div>
 		</div>

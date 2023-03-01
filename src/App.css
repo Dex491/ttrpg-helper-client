@@ -135,12 +135,6 @@
 
 /* CS BASE STATS COLUMN */
 
-.base-stats {
-	/* display: flex;
-	flex-direction: column;
-	align-content: center; */
-}
-
 .base-stats > ul {
 	display: flex;
 	flex-direction: column;
