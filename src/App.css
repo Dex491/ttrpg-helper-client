@@ -36,6 +36,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	border-radius: 5px;
 }
 
 .name-box input {
@@ -55,6 +56,7 @@
 	width: 367px;
 	height: 69px;
 	border: solid black 2px;
+	border-radius: 5px;
 }
 
 .char-info ul {
@@ -96,8 +98,8 @@
 	gap: 15px 15px;
 	grid-auto-flow: row;
 	grid-template-areas:
-		"base-stats skills health-equips rp-traits"
-		"base-stats skills health-equips rp-traits"
+		"base-stats skills-col health-equips rp-traits"
+		"base-stats skills-col health-equips rp-traits"
 		"other-profs other-profs health-equips rp-traits";
 }
 
@@ -108,12 +110,13 @@
 
 .base-stats {
 	grid-area: base-stats;
-	border: solid black 2px;
+	/* border: solid black 2px; */
+	border-radius: 10px;
+	background: grey;
 }
 
-.skills {
-	grid-area: skills;
-	border: solid black 2px;
+.skills-col {
+	grid-area: skills-col;
 }
 
 .health-equips {
@@ -144,6 +147,8 @@
 
 .base-stats > ul > li {
 	border: solid black 2px;
+	border-radius: 5px;
+	background: white;
 	width: 72px;
 	height: 86px;
 	align-self: center;
@@ -170,4 +175,96 @@
 .stat-mod {
 	width: 30px;
 	height: 14px;
+	border-radius: 45%;
+}
+
+/* CS SAVES/SKILLS COLUMN */
+
+.insp-box,
+.prof-box {
+	font-variant: small-caps;
+	display: flex;
+	font-weight: bold;
+	font-size: 12px;
+	/* justify-content: center; */
+	align-content: center;
+	border: solid black 2px;
+	border-radius: 5px;
+}
+
+.insp-box {
+	margin-top: 12px;
+	margin-bottom: 10px;
+}
+
+#insp,
+#prof {
+	width: 20px;
+	height: 20px;
+}
+
+#prof {
+	border: 0;
+	padding: 0;
+	margin: 3px 3px 3px 4px;
+	text-align: center;
+}
+
+.insp-box label,
+.prof-box label {
+	align-self: center;
+	text-align: center;
+}
+
+.saves ul,
+.skills ul {
+	display: flex;
+	flex-direction: column;
+	/* justify-content: start; */
+	align-items: start;
+	border: solid black 2px;
+	border-radius: 5px;
+}
+
+.saves ul > label,
+.skills ul > label {
+	font-variant: small-caps;
+	font-weight: bold;
+	align-self: center;
+	font-size: 14px;
+	margin-top: 2px;
+}
+
+.saves li,
+.skills li {
+	margin-right: 2px;
+	display: flex;
+}
+
+.saves input.prof,
+.skills input.prof {
+	width: 15px;
+	/* height: 15px; */
+	/* margin: 2px 0 0 3px; */
+}
+
+.saves input.skill-mod,
+.skills input.skill-mod {
+	width: 16px;
+	height: 11px;
+	text-align: center;
+	font-size: x-small;
+	/* padding: 0; */
+	border: 0;
+	margin-top: 3px;
+}
+
+.saves label,
+.skills label {
+	font-size: 11px;
+	margin-left: 5px;
+}
+
+.skills li > label > span {
+	color: red;
 }
