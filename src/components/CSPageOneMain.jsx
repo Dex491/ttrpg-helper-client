@@ -4,7 +4,21 @@ import Skill from "./Skill";
 export default function CSPageOneMain() {
 	return (
 		<div className="csPageOneMain">
-			<div className="other-profs"></div>
+			<div className="other-profs">
+				<div className="pass-per-box">
+					<input id="pass-per" type="text" />
+					<label htmlFor="pass-per">passive wisdom (perception)</label>
+				</div>
+				<div className="other-profs-text-box">
+					<textarea
+						name="other-profs-text"
+						id="other-profs-text"
+						cols="30"
+						rows="10"
+					></textarea>
+					<label htmlFor="other-profs-text"> other profs & languages</label>
+				</div>
+			</div>
 			<div className="base-stats">
 				<ul>
 					<BaseStat stat="strength" />

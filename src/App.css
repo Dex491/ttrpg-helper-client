@@ -27,12 +27,15 @@
 	display: flex;
 	justify-content: space-between;
 	font-variant: small-caps;
+	background: grey;
+	border-radius: 5px;
 }
 
 .name-box {
 	width: 259px;
 	height: 69px;
 	border: solid black 2px;
+	background: white;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -56,6 +59,7 @@
 	width: 367px;
 	height: 69px;
 	border: solid black 2px;
+	background: white;
 	border-radius: 5px;
 }
 
@@ -105,7 +109,7 @@
 
 .other-profs {
 	grid-area: other-profs;
-	border: solid black 2px;
+	/* border: solid black 2px; */
 }
 
 .base-stats {
@@ -181,7 +185,8 @@
 /* CS SAVES/SKILLS COLUMN */
 
 .insp-box,
-.prof-box {
+.prof-box,
+.pass-per-box {
 	font-variant: small-caps;
 	display: flex;
 	font-weight: bold;
@@ -192,7 +197,8 @@
 	border-radius: 5px;
 }
 
-.insp-box {
+.insp-box,
+.pass-per-box {
 	margin-top: 12px;
 	margin-bottom: 10px;
 }
@@ -211,7 +217,8 @@
 }
 
 .insp-box label,
-.prof-box label {
+.prof-box label,
+.pass-per-box {
 	align-self: center;
 	text-align: center;
 }
@@ -267,4 +274,42 @@
 
 .skills li > label > span {
 	color: red;
+}
+
+/* CS OTHER PROFS */
+
+.pass-per-box {
+	height: 34px;
+	display: flex;
+	align-items: center;
+}
+
+.pass-per-box input {
+	width: 23px;
+	height: 23px;
+	margin-left: 5px;
+}
+
+.pass-per-box label {
+	font-size: 14px;
+	margin-left: 5px;
+}
+
+.other-profs-text-box {
+	border: solid black 2px;
+	border-radius: 5px;
+	padding-top: 1px;
+}
+
+.other-profs-text-box textarea {
+	border-radius: 5px;
+}
+
+.other-profs-text-box label {
+	font-variant: small-caps;
+	font-weight: bold;
+	align-self: center;
+	font-size: 14px;
+	/* margin-top: 1px; */
+	height: 10px;
 }
