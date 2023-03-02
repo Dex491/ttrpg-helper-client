@@ -305,23 +305,25 @@
 }
 
 /* CS HEALTH AND EQUIPMENT */
+/* CS MID COLUMN HP BOX */
 
 .health-box {
 	height: 297px;
+	background: grey;
+	display: flex;
+	flex-direction: column;
 }
 
-.attacks-box {
+.atk-box {
 	height: 301px;
+	border: solid black 2px;
+	padding-left: 12px;
 }
 
 .health-box,
-.attacks-box {
+.atk-box {
 	margin-bottom: 5px;
-	border: solid white 2px;
-	background: grey;
 	border-radius: 10px;
-	display: flex;
-	flex-direction: column;
 }
 
 .equips-box {
@@ -512,7 +514,87 @@
 #success {
 	margin-top: 5px !important;
 }
-/* 
-.success-box-1 {
-	margin-left: 2px;
-} */
+
+/* CS MID COLUMN ATK BOX */
+
+.atk-box {
+	display: grid;
+	grid-template-columns: 80px 40px 80px;
+	grid-template-rows: 10px repeat(3, 20px) 208px 13px;
+	gap: 5px 5px;
+	grid-auto-flow: row;
+	grid-template-areas:
+		"weapon-name weapon-bonus weapon-dmg"
+		"weapon-1-name weapon-1-bonus weapon-1-dmg"
+		"weapon-2-name weapon-2-bonus weapon-2-dmg"
+		"weapon-3-name weapon-3-bonus weapon-3-dmg"
+		"weapon-full-desc weapon-full-desc weapon-full-desc"
+		"atk-box-label atk-box-label atk-box-label";
+}
+
+.weapon-name {
+	grid-area: weapon-name;
+}
+
+.weapon-bonus {
+	grid-area: weapon-bonus;
+}
+
+.weapon-dmg {
+	grid-area: weapon-dmg;
+}
+
+.weapon-1-name {
+	grid-area: weapon-1-name;
+}
+
+.weapon-2-name {
+	grid-area: weapon-2-name;
+}
+
+.weapon-3-name {
+	grid-area: weapon-3-name;
+}
+
+.weapon-1-bonus {
+	grid-area: weapon-1-bonus;
+}
+
+.weapon-2-bonus {
+	grid-area: weapon-2-bonus;
+}
+
+.weapon-3-bonus {
+	grid-area: weapon-3-bonus;
+}
+
+.weapon-1-dmg {
+	grid-area: weapon-1-dmg;
+}
+
+.weapon-2-dmg {
+	grid-area: weapon-2-dmg;
+}
+
+.weapon-3-dmg {
+	grid-area: weapon-3-dmg;
+}
+
+.weapon-full-desc {
+	grid-area: weapon-full-desc;
+}
+
+.atk-box-label {
+	grid-area: atk-box-label;
+}
+
+.weapon-labels {
+	font-variant: small-caps;
+	font-size: 12px;
+	color: rgb(158, 158, 158);
+}
+
+.atk-box > input,
+.atk-box > textarea {
+	border-radius: 5px;
+}

@@ -130,7 +130,28 @@ export default function CSPageOneMain() {
 						</div>
 					</div>
 				</div>
-				<div className="attacks-box"></div>
+				<div className="atk-box">
+					<label className="weapon-name weapon-labels">name</label>
+					<label className="weapon-bonus weapon-labels">atk bonus</label>
+					<label className="weapon-dmg weapon-labels">damage/type</label>
+					<input className="weapon-1-name" placeholder="Longsword" />
+					<input className="weapon-2-name" />
+					<input className="weapon-3-name" />
+					<input className="weapon-1-bonus" />
+					<input className="weapon-2-bonus" />
+					<input className="weapon-3-bonus" />
+					<input className="weapon-1-dmg" />
+					<input className="weapon-2-dmg" />
+					<input className="weapon-3-dmg" />
+					<textarea
+						className="weapon-full-desc"
+						name="weapon-full-desc"
+						id="weapon-full-desc"
+						cols="30"
+						rows="10"
+					></textarea>
+					<label className="atk-box-label"> </label>
+				</div>
 				<div className="equips-box"></div>
 			</div>
 			<div className="rp-traits"></div>
