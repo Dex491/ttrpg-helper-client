@@ -147,10 +147,8 @@ export default function CSPageOneMain() {
 						className="weapon-full-desc"
 						name="weapon-full-desc"
 						id="weapon-full-desc"
-						cols="30"
-						rows="10"
 					></textarea>
-					<label className="atk-box-label"> </label>
+					<label className="atk-box-label"> attacks & equipment</label>
 				</div>
 				<div className="equips-box"></div>
 			</div>
