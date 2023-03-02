@@ -90,6 +90,37 @@ export default function CSPageOneMain() {
 							<label htmlFor="speed">speed</label>
 						</li>
 					</ul>
+					<div className="hp-box">
+						<label htmlFor="hp-max" className="hp-max-label">
+							Hit Point Max.
+						</label>
+						<input type="text" id="hp-max" />
+						<input type="text" id="current-hp" />
+						<label htmlFor="current-hp" className="current-hp-label">
+							current hit points
+						</label>
+					</div>
+					<div className="flex">
+						<div className="hit-dice">
+							<label htmlFor="hit-dice-total" className="hit-dice-total-label">
+								Total
+							</label>
+							<input type="text" id="hit-dice-total" />
+							<input type="text" id="hit-dice" />
+							<label htmlFor="hit-dice" className="hit-dice-label">
+								hit dice
+							</label>
+						</div>
+						<div className="death-saves">
+							<label htmlFor="success">success</label>
+							<input id="success" type="checkbox" />
+							<input id="success" type="checkbox" />
+							<input id="success" type="checkbox" />
+							<label htmlFor="death-saves" className="death-saves-label">
+								death saves
+							</label>
+						</div>
+					</div>
 				</div>
 				<div className="attacks-box"></div>
 				<div className="equips-box"></div>

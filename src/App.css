@@ -25,7 +25,7 @@
 	display: flex;
 	justify-content: space-between;
 	font-variant: small-caps;
-	background: grey;
+	/* background: grey; */
 	border-radius: 5px;
 }
 
@@ -33,7 +33,7 @@
 	width: 259px;
 	height: 69px;
 	border: solid black 2px;
-	background: white;
+	/* background: white; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -57,7 +57,7 @@
 	width: 367px;
 	height: 69px;
 	border: solid black 2px;
-	background: white;
+	/* background: white; */
 	border-radius: 5px;
 }
 
@@ -317,8 +317,11 @@
 .health-box,
 .attacks-box {
 	margin-bottom: 5px;
-	border: solid black 2px;
-	border-radius: 5px;
+	border: solid white 2px;
+	background: grey;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
 }
 
 .equips-box {
@@ -329,22 +332,159 @@
 
 .health-box .top-line {
 	display: flex;
+	gap: 7px;
+	margin-top: 8px;
 }
 
 .top-line > li {
 	width: 66px;
 	height: 66px;
+	border: solid black 2px;
+	border-radius: 5px;
+	background: white;
 }
 
 .top-line > li > input {
 	width: 56px;
 	height: 45px;
+	text-align: center;
+	font-weight: bold;
+	font-size: xx-large;
+	margin-top: 1px;
+	border-radius: 5px;
 }
 
 .top-line > li > label {
-	width: 56px;
-	height: 10px;
+	width: fit-content;
 	font-variant: small-caps;
 	font-weight: bold;
 	font-size: 12px;
+	display: flex;
+	margin: auto;
+	line-height: 0.8;
+}
+
+.armour-class-box {
+	border-radius: 50% 50% 50% 50% / 10% 10% 95% 95% !important;
+}
+
+#armour-class {
+	margin-top: 2px;
+	width: 40px;
+	height: 32px;
+}
+
+.hp-box {
+	width: 220px;
+	height: 90px;
+	background: white;
+	border: solid black 2px;
+	border-radius: 5px;
+	align-self: center;
+
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+}
+
+.hp-max-label {
+	width: 65px;
+	font-size: 10px;
+	color: rgb(158, 158, 158);
+	margin-left: 7.5px;
+	line-height: 2.1;
+}
+
+#hp-max {
+	height: 13px;
+	width: 129px;
+	margin-left: auto;
+	margin-right: 7.5px;
+	margin-top: 2px;
+	border-radius: 5px;
+	font-size: 12px;
+}
+
+#current-hp {
+	width: 197px;
+	height: 41px;
+	margin: auto;
+	margin-top: 2px;
+	text-align: center;
+	font-weight: bold;
+	font-size: xx-large;
+	border-radius: 5px;
+}
+
+.current-hp-label {
+	font-variant: small-caps;
+	font-weight: bold;
+	font-size: 12px;
+	margin: auto;
+	margin-bottom: 5px;
+	line-height: 0.9;
+}
+
+.flex {
+	display: flex;
+	gap: 5px;
+	margin: auto;
+}
+
+.hit-dice,
+.death-saves {
+	width: 102px;
+	height: 65px;
+	background: white;
+	border: solid black 2px;
+	border-radius: 5px;
+}
+
+.hit-dice {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+}
+
+.hit-dice-total-label {
+	width: 20px;
+	height: 11px;
+	font-size: 10px;
+	color: rgb(158, 158, 158);
+	margin-left: 5px;
+	line-height: 2;
+}
+
+#hit-dice-total {
+	height: 11px;
+	width: 60px;
+	margin-left: auto;
+	margin-right: 5px;
+	margin-top: 2px;
+	border-radius: 5px;
+	font-size: 12px;
+}
+
+#hit-dice {
+	width: 84px;
+	height: 25px;
+	margin: 2px 5px 0px 5px;
+	text-align: center;
+	font-size: x-large;
+	border-radius: 5px;
+}
+
+.hit-dice-label {
+	font-variant: small-caps;
+	font-weight: bold;
+	font-size: 12px;
+	margin: auto;
+	margin-bottom: 2px;
+	line-height: 0.8;
+}
+
+.death-saves {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
 }
