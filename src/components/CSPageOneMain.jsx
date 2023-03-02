@@ -112,10 +112,18 @@ export default function CSPageOneMain() {
 							</label>
 						</div>
 						<div className="death-saves">
-							<label htmlFor="success">success</label>
+							<label htmlFor="success" className="success-label">
+								success
+							</label>
 							<input id="success" type="checkbox" />
 							<input id="success" type="checkbox" />
 							<input id="success" type="checkbox" />
+							<label htmlFor="failure" className="failure-label">
+								failure
+							</label>
+							<input id="failure" type="checkbox" />
+							<input id="failure" type="checkbox" />
+							<input id="failure" type="checkbox" />
 							<label htmlFor="death-saves" className="death-saves-label">
 								death saves
 							</label>

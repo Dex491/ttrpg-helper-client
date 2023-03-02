@@ -474,7 +474,8 @@
 	border-radius: 5px;
 }
 
-.hit-dice-label {
+.hit-dice-label,
+.death-saves-label {
 	font-variant: small-caps;
 	font-weight: bold;
 	font-size: 12px;
@@ -488,3 +489,30 @@
 	flex-wrap: wrap;
 	align-content: space-between;
 }
+
+.success-label,
+.failure-label {
+	font-size: 12px;
+	text-align: end;
+	font-variant: small-caps;
+	margin-left: 2px;
+	width: 45px;
+	line-height: 0.9;
+}
+
+.success-label {
+	margin-top: 5px;
+}
+
+#success,
+#failure {
+	margin: 0 0 0 4px;
+}
+
+#success {
+	margin-top: 5px !important;
+}
+/* 
+.success-box-1 {
+	margin-left: 2px;
+} */
