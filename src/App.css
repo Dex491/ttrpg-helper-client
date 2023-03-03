@@ -652,9 +652,9 @@
 }
 
 .currency input {
-	width: 30px;
+	width: 29px;
 	border: 2px inset white;
-	/* border-radius: 5px; */
+	border-radius: 5px;
 }
 
 .currency label {
@@ -670,11 +670,87 @@
 	background: grey;
 	border-radius: 10px;
 	margin-bottom: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	align-items: center;
+}
+
+.pers-traits {
+	margin-top: 5px;
+	width: 220px;
+	height: 75px;
+}
+
+.ideals,
+.bonds,
+.flaws,
+.pers-traits {
+	background: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.ideals textarea,
+.bonds textarea,
+.flaws textarea,
+.pers-traits textarea {
+	width: 205px;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+.ideals textarea,
+.bonds textarea,
+.flaws textarea {
+	height: 45px;
+}
+
+.pers-traits textarea {
+	height: 50px;
+}
+
+.ideals label,
+.bonds label,
+.flaws label,
+.pers-traits label {
+	font-size: 11px;
+	font-variant: small-caps;
+	line-height: 1.1;
+}
+
+.ideals,
+.bonds,
+.flaws {
+	width: 220px;
+	height: 60px;
+}
+
+.rp-traits-box > div {
+	border: solid black 2px;
+	border-radius: 5px;
 }
 
 .feats-box {
-	width: 238px;
-	height: 556px;
-	background: grey;
+	width: 234px;
+	height: 573px;
+	border: solid black 2px;
 	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#feats {
+	width: 214px;
+	height: 543px;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+.feats-box > label {
+	font-size: 14px;
+	font-variant: small-caps;
+	font-weight: bold;
 }

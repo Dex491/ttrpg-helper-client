@@ -182,8 +182,28 @@ export default function CSPageOneMain() {
 				</div>
 			</div>
 			<div className="feats-rp-traits-box">
-				<div className="rp-traits-box"></div>
-				<div className="feats-box"></div>
+				<div className="rp-traits-box">
+					<div className="pers-traits">
+						<textarea name="pers-traits-text" id="pers-traits-text"></textarea>
+						<label htmlFor="pers-traits-text">personality traits</label>
+					</div>
+					<div className="ideals">
+						<textarea name="ideals-text" id="ideals-text"></textarea>
+						<label htmlFor="ideals-text">ideals</label>
+					</div>
+					<div className="bonds">
+						<textarea name="bonds-text" id="bonds-text"></textarea>
+						<label htmlFor="bonds-text">bonds</label>
+					</div>
+					<div className="flaws">
+						<textarea name="flaws-text" id="flaws-text"></textarea>
+						<label htmlFor="flaws-text">flaws</label>
+					</div>
+				</div>
+				<div className="feats-box">
+					<textarea name="feats" id="feats"></textarea>
+					<label htmlFor="feats">features & traits</label>
+				</div>
 			</div>
 		</div>
 	);
