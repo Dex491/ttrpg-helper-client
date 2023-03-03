@@ -134,13 +134,13 @@ export default function CSPageOneMain() {
 					<label className="weapon-name weapon-labels">name</label>
 					<label className="weapon-bonus weapon-labels">atk bonus</label>
 					<label className="weapon-dmg weapon-labels">damage/type</label>
-					<input className="weapon-1-name" placeholder="Longsword" />
+					<input className="weapon-1-name" placeholder="+1 Dagger" />
 					<input className="weapon-2-name" />
 					<input className="weapon-3-name" />
-					<input className="weapon-1-bonus" />
+					<input className="weapon-1-bonus" placeholder="+1" />
 					<input className="weapon-2-bonus" />
 					<input className="weapon-3-bonus" />
-					<input className="weapon-1-dmg" />
+					<input className="weapon-1-dmg" placeholder="1d4 piercing" />
 					<input className="weapon-2-dmg" />
 					<input className="weapon-3-dmg" />
 					<textarea
@@ -150,9 +150,41 @@ export default function CSPageOneMain() {
 					></textarea>
 					<label className="atk-box-label"> attacks & equipment</label>
 				</div>
-				<div className="equips-box"></div>
+				<div className="equips-box">
+					<div className="equips-container">
+						<div className="currency">
+							<div className="cp-box">
+								<label htmlFor="cp">cp</label>
+								<input type="text" name="cp" />
+							</div>
+							<div className="sp-box">
+								<label htmlFor="sp">sp</label>
+								<input type="text" name="sp" />
+							</div>
+							<div className="ep-box">
+								<label htmlFor="ep">ep</label>
+								<input type="text" name="ep" />
+							</div>
+							<div className="gp-box">
+								<label htmlFor="gp">gp</label>
+								<input type="text" name="gp" />
+							</div>
+							<div className="pp-box">
+								<label htmlFor="pp">pp</label>
+								<input type="text" name="pp" />
+							</div>
+						</div>
+						<textarea className="equips" name="equips" id="equips"></textarea>
+					</div>
+					<label htmlFor="equips-box" className="equips-box-label">
+						equipment
+					</label>
+				</div>
 			</div>
-			<div className="rp-traits"></div>
+			<div className="feats-rp-traits-box">
+				<div className="rp-traits-box"></div>
+				<div className="feats-box"></div>
+			</div>
 		</div>
 	);
 }

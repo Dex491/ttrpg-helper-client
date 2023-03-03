@@ -45,6 +45,7 @@
 	width: 220px;
 	height: 26px;
 	font-size: x-large;
+	border-radius: 5px;
 }
 
 .name-box label {
@@ -80,6 +81,7 @@
 .char-info input {
 	width: 110px;
 	height: 16px;
+	border-radius: 5px;
 }
 
 .char-info label {
@@ -100,9 +102,9 @@
 	gap: 15px 15px;
 	grid-auto-flow: row;
 	grid-template-areas:
-		"base-stats skills-col health-equips rp-traits"
-		"base-stats skills-col health-equips rp-traits"
-		"other-profs other-profs health-equips rp-traits";
+		"base-stats skills-col health-equips feats-rp-traits-box"
+		"base-stats skills-col health-equips feats-rp-traits-box"
+		"other-profs other-profs health-equips feats-rp-traits-box";
 }
 
 .other-profs {
@@ -121,12 +123,13 @@
 
 .health-equips {
 	grid-area: health-equips;
-	/* border: solid black 2px; */
 }
 
-.rp-traits {
-	grid-area: rp-traits;
-	border: solid black 2px;
+.feats-rp-traits-box {
+	grid-area: feats-rp-traits-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .csPageOneMain div ul {
@@ -312,24 +315,8 @@
 	background: grey;
 	display: flex;
 	flex-direction: column;
-}
-
-.atk-box {
-	height: 301px;
-	border: solid black 2px;
-	padding-left: 12px;
-}
-
-.health-box,
-.atk-box {
 	margin-bottom: 5px;
 	border-radius: 10px;
-}
-
-.equips-box {
-	height: 259px;
-	border: solid black 2px;
-	border-radius: 5px;
 }
 
 .health-box .top-line {
@@ -520,7 +507,7 @@
 .atk-box {
 	display: grid;
 	grid-template-columns: 80px 40px 80px;
-	grid-template-rows: 10px repeat(3, 20px) 188px 13px;
+	grid-template-rows: 10px repeat(3, 20px) 183px 13px;
 	gap: 5px 5px;
 	grid-auto-flow: row;
 	grid-template-areas:
@@ -597,4 +584,97 @@
 .atk-box > input,
 .atk-box > textarea {
 	border-radius: 5px;
+}
+
+.atk-box-label {
+	font-variant: small-caps;
+	font-weight: bold;
+	align-self: center;
+	font-size: 14px;
+	padding-top: 2px;
+	margin-bottom: 1px;
+}
+
+.atk-box {
+	height: 295px;
+	border: solid black 2px;
+	padding-left: 12px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+/* CS MID COLUMN EQUIPS BOX */
+
+.equips-box {
+	height: 269px;
+	border: solid black 2px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+}
+
+.equips-container {
+	display: flex;
+	gap: 5px;
+	height: 249px;
+}
+
+.equips {
+	width: 156px;
+	margin: 5px 5px 5px 0;
+	border-radius: 5px;
+	height: 238px;
+}
+
+.currency {
+	width: 60px;
+	display: flex;
+	flex-direction: column;
+	/* background: grey; */
+	height: 175px;
+	justify-content: space-between;
+}
+
+.equips-box-label {
+	font-variant: small-caps;
+	font-weight: bold;
+	align-self: center;
+	font-size: 14px;
+}
+
+.currency > div {
+	display: flex;
+	border: solid black 1px;
+	border-radius: 5px;
+	margin: 4px;
+	width: 55px;
+	height: 23px;
+}
+
+.currency input {
+	width: 30px;
+	border: 2px inset white;
+	/* border-radius: 5px; */
+}
+
+.currency label {
+	font-size: 14px;
+	font-variant: small-caps;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.rp-traits-box {
+	width: 238px;
+	height: 297px;
+	background: grey;
+	border-radius: 10px;
+	margin-bottom: 5px;
+}
+
+.feats-box {
+	width: 238px;
+	height: 556px;
+	background: grey;
+	border-radius: 10px;
 }
