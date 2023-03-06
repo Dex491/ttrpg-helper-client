@@ -66,6 +66,7 @@ export default function CSPageOneMain() {
 						<Skill name="Nature" rootStat="(Int)" />
 						<Skill name="Perception" rootStat="(Wis)" />
 						<Skill name="Performance" rootStat="(Cha)" />
+						<Skill name="Persuasion" rootStat="(Cha)" />
 						<Skill name="Religion" rootStat="(Int)" />
 						<Skill name="Sleight of H." rootStat="(Dex)" />
 						<Skill name="Stealth" rootStat="(Dex)" />
@@ -148,7 +149,7 @@ export default function CSPageOneMain() {
 						name="weapon-full-desc"
 						id="weapon-full-desc"
 					></textarea>
-					<label className="atk-box-label"> attacks & equipment</label>
+					<label className="atk-box-label"> attacks & spellcasting</label>
 				</div>
 				<div className="equips-box">
 					<div className="equips-container">
