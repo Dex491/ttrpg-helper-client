@@ -1,27 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function CharacterSheetHeader({ csData }) {
-	// const [csState, setCsState] = useState([]);
+	const [csHeaderState, setCSHeaderState] = useState(csData);
+	console.log(csHeaderState);
+	console.log(csData);
 
 	const handleChange = (e) => {
 		const name = e.target.name;
 		let value = e.target.value;
 		console.log(name, value);
-		if (name === "charName") {
-			// setCsState({ ...csState, charName: value });
-			// console.log(csState);
-		}
 
-		csData = { ...csData, [name]: value };
-		console.log(csData);
-		return csData;
+		setCSHeaderState({ ...csHeaderState, [name]: value });
+		console.log(csHeaderState);
 	};
 
-	console.log(csData);
+	// useEffect(() => {}, [csData]);
 
-	if (!csData) {
-		return <p>Loading</p>;
-	}
+	// console.log(csData);
+
+	// if (!csHeaderState) {
+	// 	return <p>Loading</p>;
+	// }
 
 	return (
 		<div className="csHeader">
@@ -29,11 +28,11 @@ export default function CharacterSheetHeader({ csData }) {
 				<input
 					id="cName"
 					placeholder="Character Name"
-					value={csData.charName || ""}
-					name="cName"
+					value={csHeaderState ? csHeaderState.charName : "No data"}
+					name="charName"
 					onChange={handleChange}
 				/>
-				<label htmlFor="cName">character name</label>
+				<label htmlFor="charName">character name</label>
 			</div>
 			<div className="char-info">
 				<ul>
@@ -41,32 +40,55 @@ export default function CharacterSheetHeader({ csData }) {
 						<input
 							id="level"
 							placeholder="Bard L2, Rogue L1"
-							value={csData.class}
+							value={csHeaderState ? csHeaderState.class : ""}
+							onChange={handleChange}
+							name="class"
 						/>
-						<label htmlFor="level">class & level</label>
+						<label htmlFor="class">class & level</label>
 					</li>
 					<li>
 						<input
 							id="background"
 							placeholder="Criminal"
-							value={csData.background}
+							value={csHeaderState ? csHeaderState.background : ""}
+							onChange={handleChange}
 						/>
 						<label htmlFor="background">background</label>
 					</li>
 					<li>
-						<input id="pName" placeholder="Dex" value={csData.playerName} />
+						<input
+							id="pName"
+							placeholder="Dex"
+							value={csHeaderState ? csHeaderState.background : ""}
+							onChange={handleChange}
+						/>
 						<label htmlFor="pName">player name</label>
 					</li>
 					<li>
-						<input id="race" placeholder="Half-Elf" value={csData.race} />
+						<input
+							id="race"
+							placeholder="Half-Elf"
+							value={csHeaderState ? csHeaderState.race : ""}
+							onChange={handleChange}
+						/>
 						<label htmlFor="race">race</label>
 					</li>
 					<li>
-						<input id="align" placeholder="Chaotic Good" value={csData.align} />
+						<input
+							id="align"
+							placeholder="Chaotic Good"
+							value={csHeaderState ? csHeaderState.align : ""}
+							onChange={handleChange}
+						/>
 						<label htmlFor="align">alignment</label>
 					</li>
 					<li>
-						<input id="xp" placeholder="3000" value={csData.xp} />
+						<input
+							id="xp"
+							placeholder="3000"
+							value={csHeaderState ? csHeaderState.xp : ""}
+							onChange={handleChange}
+						/>
 						<label htmlFor="xp">experience points</label>
 					</li>
 				</ul>

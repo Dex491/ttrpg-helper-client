@@ -23,7 +23,7 @@ export default function CharacterSheet() {
 		csData = data;
 	};
 
-	if (!characterSheet) {
+	if (characterSheet === undefined) {
 		return <p>Loading</p>;
 	}
 
