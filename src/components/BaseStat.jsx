@@ -1,13 +1,15 @@
-export default function BaseStat({ stat }) {
-	let statValue = "";
+export default function BaseStat({ stat, characterSheet, setCharacterSheet }) {
+	console.log(stat);
+	console.log(characterSheet?.baseStats);
 
 	const handleChange = (e) => {
 		const name = e.target.name;
 		let value = e.target.value;
-		console.log(name, value);
-		if (name === "strength") {
-			value = Number(value);
-		}
+
+		setCharacterSheet({
+			...characterSheet,
+			baseStats: { ...characterSheet.baseStats, [name]: Number(value) },
+		});
 	};
 
 	return (
@@ -18,7 +20,11 @@ export default function BaseStat({ stat }) {
 				id={stat}
 				className="stat"
 				name={stat}
-				value={statValue}
+				value={
+					characterSheet?.baseStats?.strength
+						? characterSheet.baseStats.strength
+						: ""
+				}
 				onChange={handleChange}
 			/>
 			<input

@@ -7,7 +7,6 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 	const handleChange = (e) => {
 		const name = e.target.name;
 		let value = e.target.value;
-		let checked = e.target.checked;
 		console.log(name, value);
 
 		setCharacterSheet({ ...characterSheet, [name]: value });
@@ -15,7 +14,6 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 
 	const handleChecked = (e) => {
 		const name = e.target.name;
-		let value = e.target.value;
 		let checked = e.target.checked;
 
 		if (name === "inspiration") {
@@ -49,12 +47,36 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 			</div>
 			<div className="base-stats">
 				<ul>
-					<BaseStat stat="strength" />
-					<BaseStat stat="dexterity" />
-					<BaseStat stat="constitution" />
-					<BaseStat stat="intelligence" />
-					<BaseStat stat="wisdom" />
-					<BaseStat stat="charisma" />
+					<BaseStat
+						stat="strength"
+						characterSheet={characterSheet}
+						setCharacterSheet={setCharacterSheet}
+					/>
+					<BaseStat
+						stat="dexterity"
+						characterSheet={characterSheet}
+						setCharacterSheet={setCharacterSheet}
+					/>
+					<BaseStat
+						stat="constitution"
+						characterSheet={characterSheet}
+						setCharacterSheet={setCharacterSheet}
+					/>
+					<BaseStat
+						stat="intelligence"
+						characterSheet={characterSheet}
+						setCharacterSheet={setCharacterSheet}
+					/>
+					<BaseStat
+						stat="wisdom"
+						characterSheet={characterSheet}
+						setCharacterSheet={setCharacterSheet}
+					/>
+					<BaseStat
+						stat="charisma"
+						characterSheet={characterSheet}
+						setCharacterSheet={setCharacterSheet}
+					/>
 				</ul>
 			</div>
 			<div className="skills-col">
@@ -64,9 +86,6 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 							id="insp"
 							type="checkbox"
 							name="inspiration"
-							// value={
-							// 	characterSheet?.inspiration ? characterSheet.inspiration : ""
-							// }
 							checked={characterSheet.inspiration === true}
 							onChange={handleChecked}
 						/>
