@@ -7,7 +7,6 @@ export default function CharacterSheetHeader({
 	const handleChange = (e) => {
 		const name = e.target.name;
 		let value = e.target.value;
-		console.log(name, value);
 
 		setCharacterSheet({
 			...characterSheet,

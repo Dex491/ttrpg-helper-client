@@ -13,14 +13,11 @@ export default function CharacterSheet() {
 		fetchCS();
 	}, []);
 
-	let csData = null;
-
 	const fetchCS = async () => {
 		const res = await fetch(`${apiUrl}/characterSheet`);
 		const data = await res.json();
 		// TODO: CSData passed down currently hard coded, will need to check for id when there's multiple sheets
 		setCharacterSheet(data.data[0]);
-		csData = data;
 	};
 
 	if (characterSheet === undefined) {
@@ -34,7 +31,10 @@ export default function CharacterSheet() {
 					characterSheet={characterSheet}
 					setCharacterSheet={setCharacterSheet}
 				/>
-				<CSPageOneMain csData={csData} />
+				<CSPageOneMain
+					characterSheet={characterSheet}
+					setCharacterSheet={setCharacterSheet}
+				/>
 			</form>
 		</>
 	);

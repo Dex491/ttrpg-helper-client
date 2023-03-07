@@ -1,13 +1,41 @@
 import BaseStat from "./BaseStat";
 import Skill from "./Skill";
 
-export default function CSPageOneMain() {
+export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
+	console.log(characterSheet);
+
+	const handleChange = (e) => {
+		const name = e.target.name;
+		let value = e.target.value;
+		let checked = e.target.checked;
+		console.log(name, value);
+
+		setCharacterSheet({ ...characterSheet, [name]: value });
+	};
+
+	const handleChecked = (e) => {
+		const name = e.target.name;
+		let value = e.target.value;
+		let checked = e.target.checked;
+
+		if (name === "inspiration") {
+			setCharacterSheet({ ...characterSheet, [name]: checked });
+			console.log(checked);
+		}
+	};
+
 	return (
 		<div className="csPageOneMain">
 			<div className="other-profs">
 				<div className="pass-per-box">
-					<input id="pass-per" type="text" />
-					<label htmlFor="pass-per">passive wisdom (perception)</label>
+					<input
+						id="pass-per"
+						type="text"
+						name="passPer"
+						value={characterSheet?.passPer ? characterSheet.passPer : ""}
+						onChange={handleChange}
+					/>
+					<label htmlFor="passPer">passive wisdom (perception)</label>
 				</div>
 				<div className="other-profs-text-box">
 					<textarea
@@ -32,12 +60,27 @@ export default function CSPageOneMain() {
 			<div className="skills-col">
 				<div className="insp-prof">
 					<div className="insp-box">
-						<input id="insp" type="checkbox" />
-						<label htmlFor="insp">inspiration</label>
+						<input
+							id="insp"
+							type="checkbox"
+							name="inspiration"
+							// value={
+							// 	characterSheet?.inspiration ? characterSheet.inspiration : ""
+							// }
+							checked={characterSheet.inspiration === true}
+							onChange={handleChecked}
+						/>
+						<label htmlFor="inspiration">inspiration</label>
 					</div>
 					<div className="prof-box">
-						<input id="prof" type="text" />
-						<label htmlFor="prof">proficiency bonus</label>
+						<input
+							id="prof"
+							type="text"
+							name="profBonus"
+							value={characterSheet?.profBonus ? characterSheet.profBonus : ""}
+							onChange={handleChange}
+						/>
+						<label htmlFor="profBonus">proficiency bonus</label>
 					</div>
 				</div>
 				<div className="saves">
