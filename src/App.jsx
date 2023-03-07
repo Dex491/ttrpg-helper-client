@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import CharacterSheet from "./components/CharacterSheet";
 import "./App.css";
+import Header from "./components/Header";
 
 function App() {
 	return (
 		<>
+			<Header />
 			<CharacterSheet />
 
 			{/*

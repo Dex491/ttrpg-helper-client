@@ -1,26 +1,19 @@
 import { useEffect, useState } from "react";
 
-export default function CharacterSheetHeader({ csData }) {
-	const [csHeaderState, setCSHeaderState] = useState(csData);
-	console.log(csHeaderState);
-	console.log(csData);
-
+export default function CharacterSheetHeader({
+	characterSheet,
+	setCharacterSheet,
+}) {
 	const handleChange = (e) => {
 		const name = e.target.name;
 		let value = e.target.value;
 		console.log(name, value);
 
-		setCSHeaderState({ ...csHeaderState, [name]: value });
-		console.log(csHeaderState);
+		setCharacterSheet({
+			...characterSheet,
+			headerStats: { ...characterSheet.headerStats, [name]: value },
+		});
 	};
-
-	// useEffect(() => {}, [csData]);
-
-	// console.log(csData);
-
-	// if (!csHeaderState) {
-	// 	return <p>Loading</p>;
-	// }
 
 	return (
 		<div className="csHeader">
@@ -28,7 +21,11 @@ export default function CharacterSheetHeader({ csData }) {
 				<input
 					id="cName"
 					placeholder="Character Name"
-					value={csHeaderState ? csHeaderState.charName : "No data"}
+					value={
+						characterSheet?.headerStats?.charName
+							? characterSheet.headerStats.charName
+							: ""
+					}
 					name="charName"
 					onChange={handleChange}
 				/>
@@ -40,7 +37,11 @@ export default function CharacterSheetHeader({ csData }) {
 						<input
 							id="level"
 							placeholder="Bard L2, Rogue L1"
-							value={csHeaderState ? csHeaderState.class : ""}
+							value={
+								characterSheet?.headerStats?.class
+									? characterSheet.headerStats.class
+									: ""
+							}
 							onChange={handleChange}
 							name="class"
 						/>
@@ -50,8 +51,13 @@ export default function CharacterSheetHeader({ csData }) {
 						<input
 							id="background"
 							placeholder="Criminal"
-							value={csHeaderState ? csHeaderState.background : ""}
+							value={
+								characterSheet?.headerStats?.background
+									? characterSheet.headerStats.background
+									: ""
+							}
 							onChange={handleChange}
+							name="background"
 						/>
 						<label htmlFor="background">background</label>
 					</li>
@@ -59,17 +65,27 @@ export default function CharacterSheetHeader({ csData }) {
 						<input
 							id="pName"
 							placeholder="Dex"
-							value={csHeaderState ? csHeaderState.background : ""}
+							value={
+								characterSheet?.headerStats?.playerName
+									? characterSheet.headerStats.playerName
+									: ""
+							}
 							onChange={handleChange}
+							name="playerName"
 						/>
-						<label htmlFor="pName">player name</label>
+						<label htmlFor="playerName">player name</label>
 					</li>
 					<li>
 						<input
 							id="race"
 							placeholder="Half-Elf"
-							value={csHeaderState ? csHeaderState.race : ""}
+							value={
+								characterSheet?.headerStats?.race
+									? characterSheet.headerStats.race
+									: ""
+							}
 							onChange={handleChange}
+							name="race"
 						/>
 						<label htmlFor="race">race</label>
 					</li>
@@ -77,8 +93,13 @@ export default function CharacterSheetHeader({ csData }) {
 						<input
 							id="align"
 							placeholder="Chaotic Good"
-							value={csHeaderState ? csHeaderState.align : ""}
+							value={
+								characterSheet?.headerStats?.align
+									? characterSheet.headerStats.align
+									: ""
+							}
 							onChange={handleChange}
+							name="align"
 						/>
 						<label htmlFor="align">alignment</label>
 					</li>
@@ -86,8 +107,13 @@ export default function CharacterSheetHeader({ csData }) {
 						<input
 							id="xp"
 							placeholder="3000"
-							value={csHeaderState ? csHeaderState.xp : ""}
+							value={
+								characterSheet?.headerStats?.xp
+									? characterSheet.headerStats.xp
+									: ""
+							}
 							onChange={handleChange}
+							name="xp"
 						/>
 						<label htmlFor="xp">experience points</label>
 					</li>

@@ -30,7 +30,10 @@ export default function CharacterSheet() {
 	return (
 		<>
 			<form className="sheet">
-				<CharacterSheetHeader csData={characterSheet.headerStats} />
+				<CharacterSheetHeader
+					characterSheet={characterSheet}
+					setCharacterSheet={setCharacterSheet}
+				/>
 				<CSPageOneMain csData={csData} />
 			</form>
 		</>
