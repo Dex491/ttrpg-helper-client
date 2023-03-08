@@ -5,6 +5,9 @@ export default function Skill({
 	characterSheet,
 	setCharacterSheet,
 }) {
+	const modDataValue = characterSheet?.skills?.[dataName]?.mod;
+	const modValue = characterSheet?.skills?.[name]?.mod;
+
 	const handleChange = (e) => {
 		const name = e.target.name;
 		let value = e.target.value;
@@ -76,12 +79,20 @@ export default function Skill({
 				name={name}
 				onChange={handleChange}
 				value={
-					dataName
-						? characterSheet?.skills?.[dataName]?.mod
-							? `+${characterSheet.skills[dataName]?.mod}`
+					modValue > 0
+						? dataName
+							? modDataValue
+								? `+${modDataValue}`
+								: "+0"
+							: modValue
+							? `+${modValue}`
 							: "+0"
-						: characterSheet?.skills?.[name]?.mod
-						? `+${characterSheet.skills[name]?.mod}`
+						: dataName
+						? modDataValue
+							? modDataValue
+							: "+0"
+						: modValue
+						? modValue
 						: "+0"
 				}
 			/>

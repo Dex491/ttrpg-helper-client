@@ -46,8 +46,12 @@ export default function Save({
 				name={name}
 				onChange={handleChange}
 				value={
-					characterSheet?.saves?.[name]?.mod
-						? `+${characterSheet.saves[name]?.mod}`
+					characterSheet?.saves?.[name]?.mod > 0
+						? characterSheet?.saves?.[name]?.mod
+							? `+${characterSheet.saves[name]?.mod}`
+							: "+0"
+						: characterSheet?.saves?.[name]?.mod
+						? characterSheet.saves[name]?.mod
 						: "+0"
 				}
 			/>
