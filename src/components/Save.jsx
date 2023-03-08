@@ -4,6 +4,13 @@ export default function Save({
 	characterSheet,
 	setCharacterSheet,
 }) {
+	const statValue = characterSheet?.baseStats?.[name];
+	const statValueDisplay =
+		statValue > 10 && statValue % 2 !== 0
+			? ((statValue - 11) / 2).toFixed()
+			: ((statValue - 10) / 2).toFixed();
+	console.log(statValueDisplay);
+
 	const handleChange = (e) => {
 		const name = e.target.name;
 		let value = e.target.value;
@@ -20,10 +27,9 @@ export default function Save({
 		const name = e.target.name;
 		let checked = e.target.checked;
 
-		let profAdd =
-			characterSheet?.saves?.[name]?.mod + characterSheet?.profBonus;
+		let profAdd = Number(statValueDisplay) + Number(characterSheet?.profBonus);
 		let profMinus =
-			characterSheet?.saves?.[name]?.mod - characterSheet?.profBonus;
+			characterSheet?.saves?.[name]?.mod - Number(characterSheet?.profBonus);
 
 		if (checked) {
 			setCharacterSheet({
@@ -62,10 +68,10 @@ export default function Save({
 				value={
 					characterSheet?.saves?.[name]?.mod > 0
 						? characterSheet?.saves?.[name]?.mod
-							? `+${characterSheet.saves[name]?.mod}`
+							? `+${characterSheet?.saves?.[name]?.mod}`
 							: "+0"
 						: characterSheet?.saves?.[name]?.mod
-						? characterSheet.saves[name]?.mod
+						? characterSheet?.saves?.[name]?.mod
 						: "+0"
 				}
 			/>

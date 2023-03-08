@@ -39,13 +39,15 @@ export default function Skill({
 		let checked = e.target.checked;
 
 		let profAdd =
-			characterSheet?.skills?.[name]?.mod + characterSheet?.profBonus;
+			characterSheet?.skills?.[name]?.mod + Number(characterSheet?.profBonus);
 		let profMinus =
-			characterSheet?.skills?.[name]?.mod - characterSheet?.profBonus;
+			characterSheet?.skills?.[name]?.mod - Number(characterSheet?.profBonus);
 		let profAddData =
-			characterSheet?.skills?.[dataName]?.mod + characterSheet?.profBonus;
+			characterSheet?.skills?.[dataName]?.mod +
+			Number(characterSheet?.profBonus);
 		let profMinusData =
-			characterSheet?.skills?.[dataName]?.mod - characterSheet?.profBonus;
+			characterSheet?.skills?.[dataName]?.mod -
+			Number(characterSheet?.profBonus);
 
 		if (checked) {
 			if (dataName) {
