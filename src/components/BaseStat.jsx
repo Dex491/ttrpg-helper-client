@@ -1,4 +1,6 @@
 export default function BaseStat({ stat, characterSheet, setCharacterSheet }) {
+	let statValue = characterSheet?.baseStats?.[stat];
+
 	const handleChange = (e) => {
 		const name = e.target.name;
 		let value = e.target.value;
@@ -9,6 +11,13 @@ export default function BaseStat({ stat, characterSheet, setCharacterSheet }) {
 		});
 	};
 
+	console.log(
+		stat,
+		typeof ((statValue - 10) / 2).toFixed(),
+		((statValue - 10) / 2).toFixed(),
+		Math.sign(((statValue - 10) / 2).toFixed())
+	);
+
 	return (
 		<li>
 			<label htmlFor={stat}>{stat}</label>
@@ -17,24 +26,25 @@ export default function BaseStat({ stat, characterSheet, setCharacterSheet }) {
 				id={stat}
 				className="stat"
 				name={stat}
-				value={
-					characterSheet?.baseStats?.[stat]
-						? characterSheet.baseStats[stat]
-						: ""
-				}
+				value={statValue ? characterSheet.baseStats[stat] : ""}
 				onChange={handleChange}
 			/>
 			<input
 				type="text"
 				id={`${stat}-mod`}
 				className="stat-mod"
-				// TODO: If positive, do below, if not do the same but with a minus
-				value={`+${
-					characterSheet?.baseStats?.[stat] > 10 &&
-					characterSheet?.baseStats?.[stat] % 2 !== 0
-						? ((characterSheet?.baseStats?.[stat] - 11) / 2).toFixed()
-						: ((characterSheet?.baseStats?.[stat] - 10) / 2).toFixed()
-				}`}
+				value={
+					((statValue - 10) / 2).toFixed() >= 0
+						? // true
+						  `+${
+								statValue > 10 && statValue % 2 !== 0
+									? ((statValue - 11) / 2).toFixed()
+									: ((statValue - 10) / 2).toFixed()
+						  }`
+						: statValue > 10 && statValue % 2 !== 0
+						? ((statValue - 11) / 2).toFixed()
+						: ((statValue - 10) / 2).toFixed()
+				}
 				// onChange={handleChange}
 				readOnly
 			/>
