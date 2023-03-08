@@ -20,16 +20,14 @@ export default function Skill({
 		const name = e.target.name;
 		let checked = e.target.checked;
 
-		if (name === "strength") {
-			setCharacterSheet({
-				...characterSheet,
-				saves: {
-					...characterSheet.saves,
-					[name]: { ...characterSheet?.saves[name], prof: checked },
-				},
-			});
-			console.log(checked);
-		}
+		setCharacterSheet({
+			...characterSheet,
+			saves: {
+				...characterSheet.saves,
+				[name]: { ...characterSheet?.saves[name], prof: checked },
+			},
+		});
+		console.log(checked);
 	};
 
 	return (
@@ -50,7 +48,7 @@ export default function Skill({
 				value={
 					characterSheet?.saves?.[name]?.mod
 						? `+${characterSheet.saves[name]?.mod}`
-						: ""
+						: "+0"
 				}
 			/>
 			<label htmlFor="{`${name}-skill`}">
