@@ -18,7 +18,7 @@ export default function BaseStat({ stat, characterSheet, setCharacterSheet }) {
 				className="stat"
 				name={stat}
 				value={
-					characterSheet?.baseStats?.strength
+					characterSheet?.baseStats?.[stat]
 						? characterSheet.baseStats[stat]
 						: ""
 				}
@@ -28,9 +28,14 @@ export default function BaseStat({ stat, characterSheet, setCharacterSheet }) {
 				type="text"
 				id={`${stat}-mod`}
 				className="stat-mod"
-				// TODO: this only works for - stat mods for example 8/9 is -1, but 11 is +1
-				value={((20 - 10) / 2).toFixed()}
-				onChange={handleChange}
+				value={
+					characterSheet?.baseStats?.[stat] > 10 &&
+					characterSheet?.baseStats?.[stat] % 2 !== 0
+						? ((characterSheet?.baseStats?.[stat] - 11) / 2).toFixed()
+						: ((characterSheet?.baseStats?.[stat] - 10) / 2).toFixed()
+				}
+				// onChange={handleChange}
+				readOnly
 			/>
 		</li>
 	);
