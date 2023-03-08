@@ -11,13 +11,6 @@ export default function BaseStat({ stat, characterSheet, setCharacterSheet }) {
 		});
 	};
 
-	console.log(
-		stat,
-		typeof ((statValue - 10) / 2).toFixed(),
-		((statValue - 10) / 2).toFixed(),
-		Math.sign(((statValue - 10) / 2).toFixed())
-	);
-
 	return (
 		<li>
 			<label htmlFor={stat}>{stat}</label>
