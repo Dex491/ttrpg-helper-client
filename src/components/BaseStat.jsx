@@ -28,12 +28,13 @@ export default function BaseStat({ stat, characterSheet, setCharacterSheet }) {
 				type="text"
 				id={`${stat}-mod`}
 				className="stat-mod"
-				value={
+				// TODO: If positive, do below, if not do the same but with a minus
+				value={`+${
 					characterSheet?.baseStats?.[stat] > 10 &&
 					characterSheet?.baseStats?.[stat] % 2 !== 0
 						? ((characterSheet?.baseStats?.[stat] - 11) / 2).toFixed()
 						: ((characterSheet?.baseStats?.[stat] - 10) / 2).toFixed()
-				}
+				}`}
 				// onChange={handleChange}
 				readOnly
 			/>

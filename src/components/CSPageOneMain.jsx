@@ -1,5 +1,6 @@
 import BaseStat from "./BaseStat";
 import Skill from "./Skill";
+import Save from "./Save";
 
 export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 	console.log(characterSheet);
@@ -104,32 +105,32 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 				</div>
 				<div className="saves">
 					<ul>
-						<Skill
+						<Save
 							name="strength"
 							characterSheet={characterSheet}
 							setCharacterSheet={setCharacterSheet}
 						/>
-						<Skill
+						<Save
 							name="dexterity"
 							characterSheet={characterSheet}
 							setCharacterSheet={setCharacterSheet}
 						/>
-						<Skill
+						<Save
 							name="constitution"
 							characterSheet={characterSheet}
 							setCharacterSheet={setCharacterSheet}
 						/>
-						<Skill
+						<Save
 							name="intelligence"
 							characterSheet={characterSheet}
 							setCharacterSheet={setCharacterSheet}
 						/>
-						<Skill
+						<Save
 							name="wisdom"
 							characterSheet={characterSheet}
 							setCharacterSheet={setCharacterSheet}
 						/>
-						<Skill
+						<Save
 							name="charisma"
 							characterSheet={characterSheet}
 							setCharacterSheet={setCharacterSheet}
@@ -139,24 +140,115 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 				</div>
 				<div className="skills">
 					<ul>
-						<Skill name="Acrobatics" rootStat="(Dex)" />
-						<Skill name="Animal Han." rootStat="(Wis)" />
-						<Skill name="Arcana" rootStat="(Int)" />
-						<Skill name="Athletics" rootStat="(Str)" />
-						<Skill name="Deception" rootStat="(Cha)" />
-						<Skill name="History" rootStat="(Int)" />
-						<Skill name="Insight" rootStat="(Wis)" />
-						<Skill name="Intimidation" rootStat="(Cha)" />
-						<Skill name="Investigation" rootStat="(Int)" />
-						<Skill name="Medicine" rootStat="(Int)" />
-						<Skill name="Nature" rootStat="(Int)" />
-						<Skill name="Perception" rootStat="(Wis)" />
-						<Skill name="Performance" rootStat="(Cha)" />
-						<Skill name="Persuasion" rootStat="(Cha)" />
-						<Skill name="Religion" rootStat="(Int)" />
-						<Skill name="Sleight of H." rootStat="(Dex)" />
-						<Skill name="Stealth" rootStat="(Dex)" />
-						<Skill name="Survival" rootStat="(Wis)" />
+						<Skill
+							name="acrobatics"
+							rootStat="(Dex)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="animal Han."
+							dataName="animalHandling"
+							rootStat="(Wis)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="arcana"
+							rootStat="(Int)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="athletics"
+							rootStat="(Str)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="deception"
+							rootStat="(Cha)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="history"
+							rootStat="(Int)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="insight"
+							rootStat="(Wis)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="intimidation"
+							rootStat="(Cha)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="investigation"
+							rootStat="(Int)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="medicine"
+							rootStat="(Int)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="nature"
+							rootStat="(Int)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="perception"
+							rootStat="(Wis)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="performance"
+							rootStat="(Cha)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="persuasion"
+							rootStat="(Cha)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="religion"
+							rootStat="(Int)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="sleight of H."
+							rootStat="(Dex)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="stealth"
+							rootStat="(Dex)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="survival"
+							rootStat="(Wis)"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
 						<label>skills</label>
 					</ul>
 				</div>

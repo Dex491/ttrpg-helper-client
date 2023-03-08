@@ -1,5 +1,6 @@
 export default function Skill({
 	name,
+	dataName,
 	rootStat,
 	characterSheet,
 	setCharacterSheet,
@@ -8,23 +9,48 @@ export default function Skill({
 		const name = e.target.name;
 		let value = e.target.value;
 
+		if (dataName) {
+			setCharacterSheet({
+				...characterSheet,
+				skills: {
+					...characterSheet.skills,
+					[dataName]: {
+						...characterSheet.skills[dataName],
+						mod: Number(value),
+					},
+				},
+			});
+			return;
+		}
+
 		setCharacterSheet({
 			...characterSheet,
-			saves: {
-				...characterSheet.saves,
-				[name]: { ...characterSheet.saves[name], mod: Number(value) },
+			skills: {
+				...characterSheet.skills,
+				[name]: { ...characterSheet.skills[name], mod: Number(value) },
 			},
 		});
 	};
 	const handleChecked = (e) => {
-		const name = e.target.name;
+		let name = e.target.name;
 		let checked = e.target.checked;
+
+		if (dataName) {
+			setCharacterSheet({
+				...characterSheet,
+				skills: {
+					...characterSheet.skills,
+					[dataName]: { ...characterSheet?.skills[dataName], prof: checked },
+				},
+			});
+			return;
+		}
 
 		setCharacterSheet({
 			...characterSheet,
-			saves: {
-				...characterSheet.saves,
-				[name]: { ...characterSheet?.saves[name], prof: checked },
+			skills: {
+				...characterSheet.skills,
+				[name]: { ...characterSheet?.skills[name], prof: checked },
 			},
 		});
 		console.log(checked);
@@ -36,7 +62,11 @@ export default function Skill({
 				type="checkbox"
 				className="prof"
 				name={name}
-				checked={characterSheet?.saves?.[name]?.prof === true}
+				checked={
+					dataName
+						? characterSheet?.skills?.[dataName]?.prof === true
+						: characterSheet?.skills?.[name]?.prof === true
+				}
 				onChange={handleChecked}
 			/>
 			<input
@@ -46,8 +76,12 @@ export default function Skill({
 				name={name}
 				onChange={handleChange}
 				value={
-					characterSheet?.saves?.[name]?.mod
-						? `+${characterSheet.saves[name]?.mod}`
+					dataName
+						? characterSheet?.skills?.[dataName]?.mod
+							? `+${characterSheet.skills[dataName]?.mod}`
+							: "+0"
+						: characterSheet?.skills?.[name]?.mod
+						? `+${characterSheet.skills[name]?.mod}`
 						: "+0"
 				}
 			/>
