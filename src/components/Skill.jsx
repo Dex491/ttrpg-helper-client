@@ -38,25 +38,60 @@ export default function Skill({
 		let name = e.target.name;
 		let checked = e.target.checked;
 
-		if (dataName) {
+		let profAdd =
+			characterSheet?.skills?.[name]?.mod + characterSheet?.profBonus;
+		let profMinus =
+			characterSheet?.skills?.[name]?.mod - characterSheet?.profBonus;
+		let profAddData =
+			characterSheet?.skills?.[dataName]?.mod + characterSheet?.profBonus;
+		let profMinusData =
+			characterSheet?.skills?.[dataName]?.mod - characterSheet?.profBonus;
+
+		if (checked) {
+			if (dataName) {
+				setCharacterSheet({
+					...characterSheet,
+					skills: {
+						...characterSheet.skills,
+						[dataName]: { mod: profAddData, prof: checked },
+					},
+				});
+				return;
+			}
+
 			setCharacterSheet({
 				...characterSheet,
 				skills: {
 					...characterSheet.skills,
-					[dataName]: { ...characterSheet?.skills[dataName], prof: checked },
+					[name]: { mod: profAdd, prof: checked },
 				},
 			});
-			return;
+		} else if (!checked) {
+			if (dataName) {
+				setCharacterSheet({
+					...characterSheet,
+					skills: {
+						...characterSheet.skills,
+						[dataName]: { mod: profMinusData, prof: checked },
+					},
+				});
+				return;
+			}
+
+			setCharacterSheet({
+				...characterSheet,
+				skills: {
+					...characterSheet.skills,
+					[name]: { mod: profMinus, prof: checked },
+				},
+			});
 		}
 
-		setCharacterSheet({
-			...characterSheet,
-			skills: {
-				...characterSheet.skills,
-				[name]: { ...characterSheet?.skills[name], prof: checked },
-			},
-		});
-		console.log(checked);
+		if (checked) {
+			console.log(profAdd);
+		} else if (!checked) {
+			console.log(profMinus);
+		}
 	};
 
 	return (

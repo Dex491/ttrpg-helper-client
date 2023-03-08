@@ -20,14 +20,28 @@ export default function Save({
 		const name = e.target.name;
 		let checked = e.target.checked;
 
-		setCharacterSheet({
-			...characterSheet,
-			saves: {
-				...characterSheet.saves,
-				[name]: { ...characterSheet?.saves[name], prof: checked },
-			},
-		});
-		console.log(checked);
+		let profAdd =
+			characterSheet?.saves?.[name]?.mod + characterSheet?.profBonus;
+		let profMinus =
+			characterSheet?.saves?.[name]?.mod - characterSheet?.profBonus;
+
+		if (checked) {
+			setCharacterSheet({
+				...characterSheet,
+				saves: {
+					...characterSheet.saves,
+					[name]: { mod: profAdd, prof: checked },
+				},
+			});
+		} else if (!checked) {
+			setCharacterSheet({
+				...characterSheet,
+				saves: {
+					...characterSheet.saves,
+					[name]: { mod: profMinus, prof: checked },
+				},
+			});
+		}
 	};
 
 	return (
