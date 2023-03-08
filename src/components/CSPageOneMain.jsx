@@ -104,12 +104,36 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 				</div>
 				<div className="saves">
 					<ul>
-						<Skill name="Strength" />
-						<Skill name="Dexterity" />
-						<Skill name="Constitution" />
-						<Skill name="Intelligence" />
-						<Skill name="Wisdom" />
-						<Skill name="Charisma" />
+						<Skill
+							name="strength"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="dexterity"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="constitution"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="intelligence"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="wisdom"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
+						<Skill
+							name="charisma"
+							characterSheet={characterSheet}
+							setCharacterSheet={setCharacterSheet}
+						/>
 						<label>saving throws</label>
 					</ul>
 				</div>

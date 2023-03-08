@@ -1,10 +1,61 @@
-export default function Skill({ name, rootStat }) {
+export default function Skill({
+	name,
+	rootStat,
+	characterSheet,
+	setCharacterSheet,
+}) {
+	const handleChange = (e) => {
+		const name = e.target.name;
+		let value = e.target.value;
+
+		setCharacterSheet({
+			...characterSheet,
+			saves: {
+				...characterSheet.saves,
+				[name]: { ...characterSheet.saves[name], mod: Number(value) },
+			},
+		});
+	};
+	const handleChecked = (e) => {
+		const name = e.target.name;
+		let checked = e.target.checked;
+
+		if (name === "strength") {
+			setCharacterSheet({
+				...characterSheet,
+				saves: {
+					...characterSheet.saves,
+					[name]: { ...characterSheet?.saves[name], prof: checked },
+				},
+			});
+			console.log(checked);
+		}
+	};
+
 	return (
 		<li>
-			<input type="checkbox" className="prof" />
-			<input type="text" id={`${name}-skill`} className="skill-mod" />
+			<input
+				type="checkbox"
+				className="prof"
+				name={name}
+				checked={characterSheet?.saves?.[name]?.prof === true}
+				onChange={handleChecked}
+			/>
+			<input
+				type="text"
+				id={`${name}-skill`}
+				className="skill-mod"
+				name={name}
+				onChange={handleChange}
+				value={
+					characterSheet?.saves?.[name]?.mod
+						? `+${characterSheet.saves[name]?.mod}`
+						: ""
+				}
+			/>
 			<label htmlFor="{`${name}-skill`}">
-				{name} <span>{rootStat ? rootStat : false}</span>
+				{name.charAt(0).toUpperCase() + name.slice(1)}{" "}
+				<span>{rootStat ? rootStat : false}</span>
 			</label>
 		</li>
 	);
