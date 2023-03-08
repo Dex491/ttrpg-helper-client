@@ -1,5 +1,9 @@
 export default function BaseStat({ stat, characterSheet, setCharacterSheet }) {
-	let statValue = characterSheet?.baseStats?.[stat];
+	const statValue = characterSheet?.baseStats?.[stat];
+	const statValueDisplay =
+		statValue > 10 && statValue % 2 !== 0
+			? ((statValue - 11) / 2).toFixed()
+			: ((statValue - 10) / 2).toFixed();
 
 	const handleChange = (e) => {
 		const name = e.target.name;
@@ -28,15 +32,8 @@ export default function BaseStat({ stat, characterSheet, setCharacterSheet }) {
 				className="stat-mod"
 				value={
 					((statValue - 10) / 2).toFixed() >= 0
-						? // true
-						  `+${
-								statValue > 10 && statValue % 2 !== 0
-									? ((statValue - 11) / 2).toFixed()
-									: ((statValue - 10) / 2).toFixed()
-						  }`
-						: statValue > 10 && statValue % 2 !== 0
-						? ((statValue - 11) / 2).toFixed()
-						: ((statValue - 10) / 2).toFixed()
+						? `+${statValueDisplay}`
+						: statValueDisplay
 				}
 				// onChange={handleChange}
 				readOnly
