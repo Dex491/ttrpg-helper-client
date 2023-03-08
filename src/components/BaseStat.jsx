@@ -1,7 +1,4 @@
 export default function BaseStat({ stat, characterSheet, setCharacterSheet }) {
-	console.log(stat);
-	console.log(characterSheet?.baseStats);
-
 	const handleChange = (e) => {
 		const name = e.target.name;
 		let value = e.target.value;
@@ -22,7 +19,7 @@ export default function BaseStat({ stat, characterSheet, setCharacterSheet }) {
 				name={stat}
 				value={
 					characterSheet?.baseStats?.strength
-						? characterSheet.baseStats.strength
+						? characterSheet.baseStats[stat]
 						: ""
 				}
 				onChange={handleChange}
