@@ -20,7 +20,7 @@ export default function Home() {
 				<p>
 					This is a basic helper app made to be used alongside a TTRPG (Tabletop
 					role-playing game) session to help enhance the play experience by
-					having everything a person (may) need in one place!
+					having everything a person (might) need in one place!
 				</p>
 				<p>
 					It's a little barebones right now, but this is a WIP so expect to see
