@@ -31,12 +31,14 @@ export default function Home() {
 					<Button
 						sx={buttonStyling}
 						href="https://github.com/Dex491/ttrpg-helper-client"
+						target="_blank"
 					>
 						Client
-					</Button>{" "}
+					</Button>
 					<Button
 						sx={buttonStyling}
 						href="https://github.com/Dex491/ttrpg-helper-server"
+						target="_blank"
 					>
 						Server
 					</Button>
