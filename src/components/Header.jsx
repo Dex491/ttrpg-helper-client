@@ -1,6 +1,15 @@
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 
 export default function Header() {
+	const buttonStyling = {
+		display: "flex",
+		backgroundColor: "grey",
+		color: "white",
+		justifyContent: "space-between",
+		alignContent: "center",
+		padding: "1em",
+	};
+
 	return (
 		<header>
 			<AppBar>
@@ -11,44 +20,13 @@ export default function Header() {
 							TTRPG Helper
 						</Typography>
 					</div>
-					<Button
-						sx={{
-							display: "flex",
-							backgroundColor: "grey",
-							color: "white",
-							justifyContent: "space-between",
-							alignContent: "center",
-							padding: "1em",
-						}}
-						href="/"
-					>
+					<Button sx={buttonStyling} href="/">
 						Home
 					</Button>
-					<Button
-						className="push"
-						sx={{
-							display: "flex",
-							backgroundColor: "grey",
-							color: "white",
-							justifyContent: "space-between",
-							alignContent: "center",
-							padding: "1em",
-						}}
-						href="/characterSheet"
-					>
+					<Button className="push" sx={buttonStyling} href="/characterSheet">
 						Character Sheets
 					</Button>
-					<Button
-						sx={{
-							display: "flex",
-							backgroundColor: "grey",
-							color: "white",
-							justifyContent: "space-between",
-							alignContent: "center",
-							padding: "1em",
-						}}
-						href="/logOut"
-					>
+					<Button sx={buttonStyling} href="/logOut">
 						Log out
 					</Button>
 				</Toolbar>
