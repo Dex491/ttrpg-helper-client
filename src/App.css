@@ -166,6 +166,12 @@ a {
 
 /* CS PAGE ONE MAIN*/
 
+form .button {
+	position: absolute;
+	top: 100px;
+	right: 400px;
+}
+
 .csPageOneMain {
 	margin-top: 11px;
 	height: 889px;
