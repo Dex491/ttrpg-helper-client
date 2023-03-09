@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import CharacterSheet from "./components/CharacterSheet";
+import Home from "./components/Home";
 import "./App.css";
 
-function App() {
+export default function App() {
 	return (
 		<>
 			<Routes>
 				<Route path="/characterSheet" element={<CharacterSheet />} />
+				<Route path="/" element={<Home />} />
 			</Routes>
 		</>
 	);
 }
-
-export default App;

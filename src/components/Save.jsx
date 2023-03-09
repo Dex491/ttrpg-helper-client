@@ -9,7 +9,7 @@ export default function Save({
 		statValue > 10 && statValue % 2 !== 0
 			? ((statValue - 11) / 2).toFixed()
 			: ((statValue - 10) / 2).toFixed();
-	console.log(statValueDisplay);
+	// console.log(statValueDisplay);
 
 	const handleChange = (e) => {
 		const name = e.target.name;

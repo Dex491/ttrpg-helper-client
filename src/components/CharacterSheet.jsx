@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CharacterSheetHeader from "./CharacterSheetHeader";
 import CSPageOneMain from "./CSPageOneMain";
+import Footer from "./Footer";
 import Header from "./Header";
 
 const apiUrl = "http://localhost:4000";
@@ -36,12 +37,7 @@ export default function CharacterSheet() {
 					setCharacterSheet={setCharacterSheet}
 				/>
 			</form>
-			{/*
-        TODO: Add this to a footer
-        <a href="https://www.flaticon.com/free-icons/d20" title="d20 icons">
-				D20 icon by Freepik
-			  </a> 
-      */}
+			<Footer />
 		</>
 	);
 }
