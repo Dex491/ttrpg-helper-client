@@ -19,6 +19,18 @@
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+.toolBar {
+	gap: 20px;
+}
+
+a {
+	padding: 7px 14px 7px 14px !important;
+}
+
+.push {
+	margin-left: auto !important;
+}
+
 /* CHARACTER SHEET */
 
 .sheet {
