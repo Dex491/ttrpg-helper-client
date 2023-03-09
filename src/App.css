@@ -1,6 +1,22 @@
 #root {
-	padding: 2rem;
+	/* padding: 2rem; */
 	text-align: center;
+}
+
+/* HEADER */
+
+.headerLogo {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.headerLogo img {
+	width: 46px;
+}
+.headerLogo h1 {
+	height: fit-content;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 /* CHARACTER SHEET */
@@ -16,6 +32,8 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 34px;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
 }
 
 /* CS HEADER */
