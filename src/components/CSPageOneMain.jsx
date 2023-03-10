@@ -494,26 +494,81 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 						<div className="currency">
 							<div className="cp-box">
 								<label htmlFor="cp">cp</label>
-								<input type="text" name="cp" />
+								<input
+									type="text"
+									name="cp"
+									value={
+										characterSheet?.equipment?.currency.cp
+											? characterSheet?.equipment?.currency.cp
+											: ""
+									}
+									readOnly
+								/>
 							</div>
 							<div className="sp-box">
 								<label htmlFor="sp">sp</label>
-								<input type="text" name="sp" />
+								<input
+									type="text"
+									name="sp"
+									value={
+										characterSheet?.equipment?.currency.sp
+											? characterSheet?.equipment?.currency.sp
+											: ""
+									}
+									readOnly
+								/>
 							</div>
 							<div className="ep-box">
 								<label htmlFor="ep">ep</label>
-								<input type="text" name="ep" />
+								<input
+									type="text"
+									name="ep"
+									value={
+										characterSheet?.equipment?.currency.ep
+											? characterSheet?.equipment?.currency.ep
+											: "0"
+									}
+									readOnly
+								/>
 							</div>
 							<div className="gp-box">
 								<label htmlFor="gp">gp</label>
-								<input type="text" name="gp" />
+								<input
+									type="text"
+									name="gp"
+									value={
+										characterSheet?.equipment?.currency.gp
+											? characterSheet?.equipment?.currency.gp
+											: ""
+									}
+									readOnly
+								/>
 							</div>
 							<div className="pp-box">
 								<label htmlFor="pp">pp</label>
-								<input type="text" name="pp" />
+								<input
+									type="text"
+									name="pp"
+									value={
+										characterSheet?.equipment?.currency.pp
+											? characterSheet?.equipment?.currency.pp
+											: "0"
+									}
+									readOnly
+								/>
 							</div>
 						</div>
-						<textarea className="equips" name="equips" id="equips"></textarea>
+						<textarea
+							className="equips"
+							name="otherEquipment"
+							id="equips"
+							value={
+								characterSheet?.equipment?.otherEquipment
+									? characterSheet?.equipment?.otherEquipment
+									: ""
+							}
+							readOnly
+						></textarea>
 					</div>
 					<label htmlFor="equips-box" className="equips-box-label">
 						equipment
@@ -523,24 +578,69 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 			<div className="feats-rp-traits-box">
 				<div className="rp-traits-box">
 					<div className="pers-traits">
-						<textarea name="pers-traits-text" id="pers-traits-text"></textarea>
+						<textarea
+							name="personalityTraits"
+							id="pers-traits-text"
+							value={
+								characterSheet?.rpTraits?.personalityTraits
+									? characterSheet?.rpTraits?.personalityTraits
+									: ""
+							}
+							readOnly
+						></textarea>
 						<label htmlFor="pers-traits-text">personality traits</label>
 					</div>
 					<div className="ideals">
-						<textarea name="ideals-text" id="ideals-text"></textarea>
+						<textarea
+							name="ideals"
+							id="ideals-text"
+							value={
+								characterSheet?.rpTraits?.ideals
+									? characterSheet?.rpTraits?.ideals
+									: ""
+							}
+							readOnly
+						></textarea>
 						<label htmlFor="ideals-text">ideals</label>
 					</div>
 					<div className="bonds">
-						<textarea name="bonds-text" id="bonds-text"></textarea>
+						<textarea
+							name="bonds-text"
+							id="bonds-text"
+							value={
+								characterSheet?.rpTraits?.bonds
+									? characterSheet?.rpTraits?.bonds
+									: ""
+							}
+							readOnly
+						></textarea>
 						<label htmlFor="bonds-text">bonds</label>
 					</div>
 					<div className="flaws">
-						<textarea name="flaws-text" id="flaws-text"></textarea>
+						<textarea
+							name="flaws-text"
+							id="flaws-text"
+							value={
+								characterSheet?.rpTraits?.flaws
+									? characterSheet?.rpTraits?.flaws
+									: ""
+							}
+							readOnly
+						></textarea>
 						<label htmlFor="flaws-text">flaws</label>
 					</div>
 				</div>
 				<div className="feats-box">
-					<textarea name="feats" id="feats"></textarea>
+					<textarea
+						name="feats"
+						id="feats"
+						value={
+							characterSheet?.featsAndTraits
+								? characterSheet?.featsAndTraits
+								: ""
+						}
+						readOnly
+					></textarea>
 					<label htmlFor="feats">features & traits</label>
 				</div>
 			</div>
