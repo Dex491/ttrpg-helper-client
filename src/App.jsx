@@ -8,7 +8,7 @@ export default function App() {
 	return (
 		<>
 			<Routes>
-				<Route path="/characterSheet" element={<CharacterSheet />} />
+				<Route path="/characterSheet/:id" element={<CharacterSheet />} />
 				<Route path="/" element={<Home />} />
 			</Routes>
 		</>

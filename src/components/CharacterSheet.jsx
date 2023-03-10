@@ -4,11 +4,14 @@ import CSPageOneMain from "./CSPageOneMain";
 import Footer from "./Footer";
 import Header from "./Header";
 import { Button } from "@mui/material";
+import { useParams } from "react-router-dom";
 
 const apiUrl = "http://localhost:4000";
 
 export default function CharacterSheet() {
 	const [characterSheet, setCharacterSheet] = useState([]);
+	const { id } = useParams;
+	const hardCodedID = 1;
 
 	const buttonStyling = {
 		display: "flex",
@@ -24,10 +27,12 @@ export default function CharacterSheet() {
 	}, []);
 
 	const fetchCS = async () => {
-		const res = await fetch(`${apiUrl}/characterSheet`);
+		console.log(hardCodedID);
+		const res = await fetch(`${apiUrl}/characterSheet/${hardCodedID}`);
 		const data = await res.json();
+		console.log(data);
 		// TODO: CSData passed down currently hard coded, will need to check for id when there's multiple sheets
-		setCharacterSheet(data.data[0]);
+		setCharacterSheet(data.data);
 	};
 
 	if (characterSheet === undefined) {
@@ -39,9 +44,22 @@ export default function CharacterSheet() {
 
 		try {
 			// TODO: Hard coded for now
-			const res = await fetch(`${apiUrl}/characterSheet/1`);
+			const options = {
+				method: "PUT",
+				headers: {
+					"Content-Type": "application/json",
+					// authorization: `Bearer ${accessToken}`,
+				},
+				body: JSON.stringify(characterSheet),
+			};
+
+			const res = await fetch(
+				`${apiUrl}/characterSheet/${hardCodedID}`,
+				options
+			);
 			const data = await res.json();
-			setCharacterSheet([...characterSheet, data.data[0]]);
+			// data.data[0] = characterSheet;
+			setCharacterSheet(data.data);
 		} catch (error) {
 			console.log(error);
 		}
