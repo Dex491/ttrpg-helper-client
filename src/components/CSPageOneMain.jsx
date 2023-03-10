@@ -318,7 +318,7 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 										? characterSheet?.healthStats?.AC
 										: ""
 								}
-								name="ac"
+								name="AC"
 								onChange={handleChangeHealthStats}
 							/>
 							<label htmlFor="armour-class">armour class</label>
@@ -436,19 +436,56 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 					<label className="weapon-name weapon-labels">name</label>
 					<label className="weapon-bonus weapon-labels">atk bonus</label>
 					<label className="weapon-dmg weapon-labels">damage/type</label>
-					<input className="weapon-1-name" placeholder="+1 Dagger" />
-					<input className="weapon-2-name" />
+					<input
+						className="weapon-1-name"
+						placeholder="+1 Dagger"
+						value={
+							characterSheet?.atkStats?.attacks[0].name
+								? characterSheet?.atkStats?.attacks[0].name
+								: ""
+						}
+						name="name"
+						// TODO: Temp read only for presentation
+						readOnly
+					/>
+					<input className="weapon-2-name" placeholder="Longsword" />
 					<input className="weapon-3-name" />
-					<input className="weapon-1-bonus" placeholder="+1" />
-					<input className="weapon-2-bonus" />
+					<input
+						className="weapon-1-bonus"
+						placeholder="+1"
+						value={
+							characterSheet?.atkStats?.attacks[0].atk
+								? `+${characterSheet?.atkStats?.attacks[0].atk}`
+								: ""
+						}
+						name="atk"
+						// TODO: Temp read only for presentation
+						readOnly
+					/>
+					<input className="weapon-2-bonus" placeholder="0" />
 					<input className="weapon-3-bonus" />
-					<input className="weapon-1-dmg" placeholder="1d4 piercing" />
-					<input className="weapon-2-dmg" />
+					<input
+						className="weapon-1-dmg"
+						placeholder="1d4 piercing"
+						value={
+							characterSheet?.atkStats?.attacks[0].damage
+								? characterSheet?.atkStats?.attacks[0].damage
+								: ""
+						}
+						readOnly
+					/>
+					<input className="weapon-2-dmg" placeholder="1d8 slashing" />
 					<input className="weapon-3-dmg" />
 					<textarea
 						className="weapon-full-desc"
-						name="weapon-full-desc"
+						name="fullDescription"
 						id="weapon-full-desc"
+						value={
+							characterSheet?.atkStats?.fullDescription
+								? characterSheet?.atkStats?.fullDescription
+								: ""
+						}
+						readOnly
 					></textarea>
 					<label className="atk-box-label"> attacks & spellcasting</label>
 				</div>
