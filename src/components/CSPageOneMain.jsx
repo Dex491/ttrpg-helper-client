@@ -10,7 +10,60 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 		let value = e.target.value;
 		console.log(name, value);
 
+		if (name === "profBonus" || name === "passPer") {
+			value = Number(value);
+		}
+
 		setCharacterSheet({ ...characterSheet, [name]: value });
+	};
+
+	const handleChangeHealthStats = (e) => {
+		const name = e.target.name;
+		let value = e.target.value;
+		console.log(name, value);
+
+		if (name === "AC" || name === "init" || name === "speed") {
+			value = Number(value);
+		}
+
+		setCharacterSheet({
+			...characterSheet,
+			healthStats: { ...characterSheet.healthStats, [name]: value },
+		});
+	};
+
+	const handleChangeHP = (e) => {
+		const name = e.target.name;
+		let value = e.target.value;
+		console.log(name, value);
+
+		setCharacterSheet({
+			...characterSheet,
+			healthStats: {
+				...characterSheet.healthStats,
+				hp: {
+					...characterSheet.healthStats.hp,
+					[name]: Number(value),
+				},
+			},
+		});
+	};
+
+	const handleChangeHitDice = (e) => {
+		const name = e.target.name;
+		let value = e.target.value;
+		console.log(name, value);
+
+		setCharacterSheet({
+			...characterSheet,
+			healthStats: {
+				...characterSheet.healthStats,
+				hitDice: {
+					...characterSheet.healthStats.hitDice,
+					[name]: value,
+				},
+			},
+		});
 	};
 
 	const handleChecked = (e) => {
@@ -257,15 +310,45 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 				<div className="health-box">
 					<ul className="top-line">
 						<li className="armour-class-box">
-							<input id="armour-class" type="text" />
+							<input
+								id="armour-class"
+								type="text"
+								value={
+									characterSheet?.healthStats?.AC
+										? characterSheet?.healthStats?.AC
+										: ""
+								}
+								name="ac"
+								onChange={handleChangeHealthStats}
+							/>
 							<label htmlFor="armour-class">armour class</label>
 						</li>
 						<li className="initiative-box">
-							<input id="initiative" type="text" />
+							<input
+								id="initiative"
+								type="text"
+								value={
+									characterSheet?.healthStats?.init
+										? characterSheet?.healthStats?.init
+										: ""
+								}
+								name="init"
+								onChange={handleChangeHealthStats}
+							/>
 							<label htmlFor="initiative">initiative</label>
 						</li>
 						<li className="speed-box">
-							<input id="speed" type="text" />
+							<input
+								id="speed"
+								type="text"
+								value={
+									characterSheet?.healthStats?.speed
+										? characterSheet?.healthStats?.speed
+										: ""
+								}
+								name="speed"
+								onChange={handleChangeHealthStats}
+							/>
 							<label htmlFor="speed">speed</label>
 						</li>
 					</ul>
@@ -273,8 +356,28 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 						<label htmlFor="hp-max" className="hp-max-label">
 							Hit Point Max.
 						</label>
-						<input type="text" id="hp-max" />
-						<input type="text" id="current-hp" />
+						<input
+							type="text"
+							id="hp-max"
+							value={
+								characterSheet?.healthStats?.hp?.max
+									? characterSheet?.healthStats?.hp?.max
+									: ""
+							}
+							name="max"
+							onChange={handleChangeHP}
+						/>
+						<input
+							type="text"
+							id="current-hp"
+							value={
+								characterSheet?.healthStats?.hp?.current
+									? characterSheet?.healthStats?.hp?.current
+									: ""
+							}
+							onChange={handleChangeHP}
+							name="current"
+						/>
 						<label htmlFor="current-hp" className="current-hp-label">
 							current hit points
 						</label>
@@ -284,8 +387,28 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 							<label htmlFor="hit-dice-total" className="hit-dice-total-label">
 								Total
 							</label>
-							<input type="text" id="hit-dice-total" />
-							<input type="text" id="hit-dice" />
+							<input
+								type="text"
+								id="hit-dice-total"
+								value={
+									characterSheet?.healthStats?.hitDice.total
+										? characterSheet?.healthStats?.hitDice.total
+										: ""
+								}
+								name="total"
+								onChange={handleChangeHitDice}
+							/>
+							<input
+								type="text"
+								id="hit-dice"
+								value={
+									characterSheet?.healthStats?.hitDice.current
+										? characterSheet?.healthStats?.hitDice.current
+										: ""
+								}
+								name="current"
+								onChange={handleChangeHitDice}
+							/>
 							<label htmlFor="hit-dice" className="hit-dice-label">
 								hit dice
 							</label>
