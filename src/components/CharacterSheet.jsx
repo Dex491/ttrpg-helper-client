@@ -27,7 +27,7 @@ export default function CharacterSheet() {
 	}, []);
 
 	const fetchCS = async () => {
-		console.log(hardCodedID);
+		console.log(hardCodedID, id);
 		const res = await fetch(`${apiUrl}/characterSheet/${hardCodedID}`);
 		const data = await res.json();
 		console.log(data);

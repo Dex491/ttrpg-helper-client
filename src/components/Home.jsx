@@ -18,7 +18,7 @@ export default function Home() {
 			<div className="home-main">
 				<h1>Welcome!</h1>
 				<p>
-					This is a basic helper app made to be used alongside a TTRPG (Tabletop
+					This is a basic helper app made to be used alongside a TTRPG (tabletop
 					role-playing game) session to help enhance the play experience by
 					having everything a person (might) need in one place!
 				</p>
