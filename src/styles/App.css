@@ -3,10 +3,6 @@
 	text-align: center;
 }
 
-html {
-	margin: 0;
-	padding: 0;
-}
 /* HEADER */
 
 .headerLogo {
@@ -44,7 +40,6 @@ a {
 	padding-bottom: 10;
 	background: #1976d2;
 	justify-items: center;
-	/* width: 100vw; */
 }
 
 .footer a {
@@ -54,6 +49,19 @@ a {
 
 .footer .p1 {
 	margin-left: 30px;
+}
+
+/* LOGIN */
+
+.auth-container {
+	width: 400px;
+	display: flex;
+	justify-content: center;
+	border: 2px solid gray;
+	border-radius: 20px;
+	/* margin-right: 0; */
+	margin: 20px;
+	/* TODO: Align center */
 }
 
 /* HOME */
