@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import CharacterSheetHeader from "./CharacterSheetHeader";
 import CSPageOneMain from "./CSPageOneMain";
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "../Footer";
+import Header from "../Header";
 import { Button } from "@mui/material";
 import { useParams } from "react-router-dom";
 

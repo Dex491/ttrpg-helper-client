@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import CharacterSheet from "./components/CharacterSheet";
+import CharacterSheet from "./components/characterSheet/CharacterSheet";
 import Home from "./components/Home";
 import "./styles/App.css";
 
