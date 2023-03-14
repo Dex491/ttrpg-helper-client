@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 export default function Header() {
-	const buttonStyling = {
+	let buttonStyling = {
 		display: "flex",
 		backgroundColor: "grey",
 		color: "white",
@@ -13,20 +13,23 @@ export default function Header() {
 	const options = ["D&D", "Dusk City Outlaws", "WH 40k"];
 	const defaultOption = options[0];
 	const hardCodedID = 1;
+	let headerSelected = "2";
+	let selectedOption = "D&D";
 
 	const handleChange = (option) => {
-		const selectedOption = option.value;
+		selectedOption = option.value;
 		if (selectedOption === "Dusk City Outlaws") {
 			console.log(2, selectedOption);
 		} else if (selectedOption === "D&D") {
 			console.log(1, selectedOption);
 		} else if (selectedOption === "WH 40k") {
+			buttonStyling = { ...buttonStyling, backgroundColor: "red" };
 			console.log(3, selectedOption);
 		}
 	};
 
 	return (
-		<header>
+		<header className={headerSelected}>
 			<AppBar>
 				<Toolbar className="toolBar">
 					<div className="headerLogo">
@@ -41,14 +44,14 @@ export default function Header() {
 					<Dropdown
 						options={options}
 						onChange={handleChange}
-						value={defaultOption || selectedOption}
+						value={selectedOption}
 						placeholder="Select"
 					/>
 
 					<Button
 						className="push"
 						sx={buttonStyling}
-						href={`/characterSheet/${hardCodedID}`}
+						href={`${selectedOption}/characterSheet/${hardCodedID}`}
 					>
 						Character Sheets
 					</Button>
