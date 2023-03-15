@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Footer from "../Footer";
 import Header from "../Header";
+import BaseStat from "./BaseStat";
 
 const apiUrl = "http://localhost:4000";
 
@@ -17,11 +18,27 @@ export default function CharacterSheets() {
 		setCharacterSheets(data);
 		console.log(characterSheets);
 	};
+
+	// if (characterSheets != []) {
+	// 	characterSheets.map((sheet) => {
+	// 		console.log(sheet);
+	// 	});
+	// }
+
 	return (
 		<>
 			<Header />
 			<div className="container">
-				{/* TODO: Generate a card for each character sheet */}
+				<ul>
+					{
+						/* TODO: Generate a card for each character sheet */
+						// characterSheets.forEach((sheet) => {
+						// 	<li>
+						// 		<p>name</p>
+						// 	</li>;
+						// })
+					}
+				</ul>
 			</div>
 			<Footer />
 		</>
