@@ -23,7 +23,8 @@
 	gap: 20px;
 }
 
-a {
+header a,
+.home-main > div > a {
 	padding: 7px 14px 7px 14px !important;
 }
 
@@ -72,9 +73,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* justify-items: center; */
 	padding-left: 20vw;
-	/* padding-right: 20vw; */
 	padding-top: 20vh;
 }
 
@@ -113,6 +112,15 @@ a {
 	line-height: 1.7;
 }
 
+.CSButton {
+	text-decoration: none;
+	color: white;
+}
+
+.cardList > li:hover {
+	transform: scale(1.2);
+}
+
 /* CHARACTER SHEET */
 
 .sheet {
@@ -137,7 +145,6 @@ a {
 	display: flex;
 	justify-content: space-between;
 	font-variant: small-caps;
-	/* background: grey; */
 	border-radius: 5px;
 }
 
@@ -145,7 +152,6 @@ a {
 	width: 259px;
 	height: 69px;
 	border: solid black 2px;
-	/* background: white; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -170,7 +176,6 @@ a {
 	width: 367px;
 	height: 69px;
 	border: solid black 2px;
-	/* background: white; */
 	border-radius: 5px;
 }
 
@@ -203,7 +208,7 @@ a {
 	line-height: 0.5;
 }
 
-/* CS PAGE ONE MAIN*/
+/* CS PAGE ONE MAIN */
 
 form .button {
 	position: absolute;

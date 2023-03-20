@@ -6,14 +6,8 @@ export default function CardList({ characterSheets }) {
 	const data = characterSheets?.data;
 	console.log(data);
 
-	// useEffect(() => {
-	// 	if (!data) {
-	// 		console.log("undefined true");
-	// 	}
-	// }, [data]);
-
 	return (
-		<ul>
+		<ul className="cardList">
 			{data
 				? data.map((item) => (
 						<SheetCard
