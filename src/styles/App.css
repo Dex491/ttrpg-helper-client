@@ -82,6 +82,24 @@ a {
 	width: 720px;
 }
 
+/* CHARACTER SHEET CARDS */
+
+.container {
+	margin-top: 5rem;
+}
+
+.container > ul {
+	list-style: none;
+	display: flex;
+	gap: 10px;
+}
+
+.container > ul > li {
+	padding: 8px;
+	border: whitesmoke solid 2px;
+	border-radius: 5px;
+}
+
 /* CHARACTER SHEET */
 
 .sheet {

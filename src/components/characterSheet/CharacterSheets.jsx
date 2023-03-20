@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Footer from "../Footer";
 import Header from "../Header";
-import SheetCard from "./SheetCard";
+import CardList from "./CardList";
 
 const apiUrl = "http://localhost:4000";
 
@@ -25,19 +25,18 @@ export default function CharacterSheets() {
 		<>
 			<Header />
 			<div className="container">
-				<ul>
-					{
-						/* TODO: Generate a card for each character sheet */
-						// characterSheets.forEach((sheet) => {
-						// 	<li>
-						// 		<p>name</p>
-						// 	</li>;
-						// })
-						loading.map((item) => (
-							<SheetCard characterSheets={characterSheets} />
-						))
-					}
-				</ul>
+				<CardList characterSheets={characterSheets} />
+				{
+					/* TODO: Generate a card for each character sheet */
+					// characterSheets.forEach((sheet) => {
+					// 	<li>
+					// 		<p>name</p>
+					// 	</li>;
+					// })
+					// loading.map((item) => (
+					// 	<SheetCard characterSheets={characterSheets} />
+					// ))
+				}
 			</div>
 			<Footer />
 		</>
