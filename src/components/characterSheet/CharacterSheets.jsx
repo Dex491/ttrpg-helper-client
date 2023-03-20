@@ -37,7 +37,15 @@ export default function CharacterSheets() {
 					// 	<SheetCard characterSheets={characterSheets} />
 					// ))
 				}
+				<hr />
+				<p>
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique
+					ipsa laboriosam dolorem animi adipisci, error rem consectetur cumque
+					quidem! Eveniet amet possimus doloremque omnis eligendi molestias
+					reprehenderit dolor modi minima?
+				</p>
 			</div>
+
 			<Footer />
 		</>
 	);

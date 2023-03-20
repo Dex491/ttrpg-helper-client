@@ -23,6 +23,7 @@ export default function CardList({ characterSheets }) {
 						/>
 				  ))
 				: "Loading"}
+			<li className="newCharSheet">+</li>
 		</ul>
 	);
 }

@@ -86,11 +86,13 @@ a {
 
 .container {
 	margin-top: 5rem;
+	height: 90vh;
 }
 
 .container > ul {
 	list-style: none;
 	display: flex;
+	flex-wrap: wrap;
 	gap: 10px;
 }
 
@@ -98,6 +100,17 @@ a {
 	padding: 8px;
 	border: whitesmoke solid 2px;
 	border-radius: 5px;
+	width: 90px;
+	height: 100px;
+}
+
+.container > hr {
+	margin-bottom: 50px;
+}
+
+.newCharSheet {
+	font-size: 3em;
+	line-height: 1.7;
 }
 
 /* CHARACTER SHEET */
