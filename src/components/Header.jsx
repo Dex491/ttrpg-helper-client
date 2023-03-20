@@ -9,7 +9,6 @@ export default function Header() {
 		alignContent: "center",
 		padding: "1em",
 	};
-	const hardCodedID = 1;
 
 	return (
 		<header>
@@ -25,11 +24,7 @@ export default function Header() {
 						Home
 					</Button>
 
-					<Button
-						className="push"
-						sx={buttonStyling}
-						href={`/characterSheet/${hardCodedID}`}
-					>
+					<Button className="push" sx={buttonStyling} href={`/characterSheets`}>
 						Character Sheets
 					</Button>
 					<Button sx={buttonStyling} href="/logOut">
