@@ -26,17 +26,6 @@ export default function CharacterSheets() {
 			<Header />
 			<div className="container">
 				<CardList characterSheets={characterSheets} />
-				{
-					/* TODO: Generate a card for each character sheet */
-					// characterSheets.forEach((sheet) => {
-					// 	<li>
-					// 		<p>name</p>
-					// 	</li>;
-					// })
-					// loading.map((item) => (
-					// 	<SheetCard characterSheets={characterSheets} />
-					// ))
-				}
 				<hr />
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique
