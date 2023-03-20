@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Footer from "../Footer";
 import Header from "../Header";
-import BaseStat from "./BaseStat";
+import SheetCard from "./SheetCard";
 
 const apiUrl = "http://localhost:4000";
 
@@ -19,11 +19,7 @@ export default function CharacterSheets() {
 		console.log(characterSheets);
 	};
 
-	// if (characterSheets != []) {
-	// 	characterSheets.map((sheet) => {
-	// 		console.log(sheet);
-	// 	});
-	// }
+	const loading = ["loading", "loading2"];
 
 	return (
 		<>
@@ -37,6 +33,9 @@ export default function CharacterSheets() {
 						// 		<p>name</p>
 						// 	</li>;
 						// })
+						loading.map((item) => (
+							<SheetCard characterSheets={characterSheets} />
+						))
 					}
 				</ul>
 			</div>
