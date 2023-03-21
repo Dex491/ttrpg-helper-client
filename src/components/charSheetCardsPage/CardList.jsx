@@ -1,5 +1,4 @@
 import SheetCard from "./SheetCard";
-import { useEffect } from "react";
 
 export default function CardList({ characterSheets }) {
 	console.log(characterSheets);
