@@ -10,8 +10,8 @@ const apiUrl = "http://localhost:4000";
 
 export default function CharacterSheet() {
 	const [characterSheet, setCharacterSheet] = useState([]);
-	const { id } = useParams;
-	const hardCodedID = 1;
+	let { id } = useParams();
+	id++;
 
 	const buttonStyling = {
 		display: "flex",
@@ -27,11 +27,10 @@ export default function CharacterSheet() {
 	}, []);
 
 	const fetchCS = async () => {
-		console.log(hardCodedID, id);
-		const res = await fetch(`${apiUrl}/characterSheet/${hardCodedID}`);
+		console.log(id);
+		const res = await fetch(`${apiUrl}/characterSheet/${id}`);
 		const data = await res.json();
 		console.log(data);
-		// TODO: CSData passed down currently hard coded, will need to check for id when there's multiple sheets
 		setCharacterSheet(data.data);
 	};
 
@@ -53,10 +52,7 @@ export default function CharacterSheet() {
 				body: JSON.stringify(characterSheet),
 			};
 
-			const res = await fetch(
-				`${apiUrl}/characterSheet/${hardCodedID}`,
-				options
-			);
+			const res = await fetch(`${apiUrl}/characterSheet/${id}`, options);
 			const data = await res.json();
 			// data.data[0] = characterSheet;
 			setCharacterSheet(data.data);

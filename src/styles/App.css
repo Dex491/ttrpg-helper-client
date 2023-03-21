@@ -107,6 +107,11 @@ header a,
 	margin-bottom: 50px;
 }
 
+.container > p {
+	width: 720px;
+	margin: auto;
+}
+
 .newCharSheet {
 	font-size: 3em;
 	line-height: 1.7;
