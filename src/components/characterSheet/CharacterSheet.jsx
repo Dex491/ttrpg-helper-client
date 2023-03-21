@@ -42,7 +42,6 @@ export default function CharacterSheet() {
 		e.preventDefault();
 
 		try {
-			// TODO: Hard coded for now
 			const options = {
 				method: "PUT",
 				headers: {
@@ -54,7 +53,6 @@ export default function CharacterSheet() {
 
 			const res = await fetch(`${apiUrl}/characterSheet/${id}`, options);
 			const data = await res.json();
-			// data.data[0] = characterSheet;
 			setCharacterSheet(data.data);
 		} catch (error) {
 			console.log(error);

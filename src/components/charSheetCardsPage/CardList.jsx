@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import SheetCard from "./SheetCard";
 
 export default function CardList({ characterSheets }) {
@@ -16,7 +18,12 @@ export default function CardList({ characterSheets }) {
 						/>
 				  ))
 				: "Loading"}
-			<li className="newCharSheet">+</li>
+
+			<li className="newCharSheet">
+				<Link className="CSButton" to={"/newCharacterSheet"}>
+					+
+				</Link>
+			</li>
 		</ul>
 	);
 }
