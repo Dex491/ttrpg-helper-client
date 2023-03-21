@@ -27,7 +27,6 @@ export default function CharacterSheet() {
 	}, []);
 
 	const fetchCS = async () => {
-		console.log(id);
 		const res = await fetch(`${apiUrl}/characterSheet/${id}`);
 		const data = await res.json();
 		console.log(data);

@@ -16,10 +16,7 @@ export default function CharacterSheets() {
 		const res = await fetch(`${apiUrl}/characterSheet`);
 		const data = await res.json();
 		setCharacterSheets(data);
-		console.log(characterSheets);
 	};
-
-	const loading = ["loading", "loading2"];
 
 	return (
 		<>

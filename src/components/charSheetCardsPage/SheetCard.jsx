@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 export default function SheetCard({ characterSheets, id }) {
-	console.log(characterSheets);
 	id--;
+
 	return (
 		<li>
 			<Link className="CSButton" to={`/characterSheet/${id}`}>
