@@ -34,7 +34,7 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 
 	const handleChangeHP = (e) => {
 		const name = e.target.name;
-		let value = e.target.value;
+		const value = e.target.value;
 		console.log(name, value);
 
 		setCharacterSheet({
@@ -49,9 +49,33 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 		});
 	};
 
+	const handleChangeAtk = (e) => {
+		const name = e.target.name;
+		const value = e.target.value;
+
+		const nameKey = name.substring(0, 3);
+		const nameArr = name.charAt(4);
+		console.log(name, value);
+		console.log(nameKey, nameArr);
+
+		setCharacterSheet({
+			...characterSheet,
+			atkStats: {
+				...characterSheet.atkStats,
+				attacks: {
+					...characterSheet.atkStats.attacks,
+					[nameArr]: {
+						...characterSheet.atkStats.attacks[nameArr],
+						[nameKey]: value,
+					},
+				},
+			},
+		});
+	};
+
 	const handleChangeHitDice = (e) => {
 		const name = e.target.name;
-		let value = e.target.value;
+		const value = e.target.value;
 		console.log(name, value);
 
 		setCharacterSheet({
@@ -68,7 +92,7 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 
 	const handleChecked = (e) => {
 		const name = e.target.name;
-		let checked = e.target.checked;
+		const checked = e.target.checked;
 
 		if (name === "inspiration") {
 			setCharacterSheet({ ...characterSheet, [name]: checked });
@@ -513,42 +537,98 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 						className="weapon-1-name"
 						placeholder="+1 Dagger"
 						value={
-							characterSheet?.atkStats?.attacks[0].name
-								? characterSheet?.atkStats?.attacks[0].name
+							characterSheet?.atkStats?.attacks[0].nme
+								? characterSheet?.atkStats?.attacks[0].nme
 								: ""
 						}
-						name="name"
-						// TODO: Temp read only for presentation
-						readOnly
+						name="nme-0"
+						onChange={handleChangeAtk}
 					/>
-					<input className="weapon-2-name" placeholder="Longsword" />
-					<input className="weapon-3-name" />
+					<input
+						className="weapon-2-name"
+						placeholder="Longsword"
+						value={
+							characterSheet?.atkStats?.attacks[1].nme
+								? characterSheet?.atkStats?.attacks[1].nme
+								: ""
+						}
+						name="nme-1"
+						onChange={handleChangeAtk}
+					/>
+					<input
+						className="weapon-3-name"
+						value={
+							characterSheet?.atkStats?.attacks[2].nme
+								? characterSheet?.atkStats?.attacks[2].nme
+								: ""
+						}
+						name="nme-2"
+						onChange={handleChangeAtk}
+					/>
 					<input
 						className="weapon-1-bonus"
 						placeholder="+1"
 						value={
 							characterSheet?.atkStats?.attacks[0].atk
-								? `+${characterSheet?.atkStats?.attacks[0].atk}`
+								? characterSheet?.atkStats?.attacks[0].atk
 								: ""
 						}
-						name="atk"
-						// TODO: Temp read only for presentation
-						readOnly
+						name="atk-0"
+						onChange={handleChangeAtk}
 					/>
-					<input className="weapon-2-bonus" placeholder="0" />
-					<input className="weapon-3-bonus" />
+					<input
+						className="weapon-2-bonus"
+						placeholder="0"
+						value={
+							characterSheet?.atkStats?.attacks[1].atk
+								? characterSheet?.atkStats?.attacks[1].atk
+								: ""
+						}
+						name="atk-1"
+						onChange={handleChangeAtk}
+					/>
+					<input
+						className="weapon-3-bonus"
+						value={
+							characterSheet?.atkStats?.attacks[2].atk
+								? characterSheet?.atkStats?.attacks[2].atk
+								: ""
+						}
+						name="atk-2"
+						onChange={handleChangeAtk}
+					/>
 					<input
 						className="weapon-1-dmg"
 						placeholder="1d4 piercing"
 						value={
-							characterSheet?.atkStats?.attacks[0].damage
-								? characterSheet?.atkStats?.attacks[0].damage
+							characterSheet?.atkStats?.attacks[0].dmg
+								? characterSheet?.atkStats?.attacks[0].dmg
 								: ""
 						}
-						readOnly
+						name="dmg-0"
+						onChange={handleChangeAtk}
 					/>
-					<input className="weapon-2-dmg" placeholder="1d8 slashing" />
-					<input className="weapon-3-dmg" />
+					<input
+						className="weapon-2-dmg"
+						placeholder="1d8 slashing"
+						value={
+							characterSheet?.atkStats?.attacks[1].dmg
+								? characterSheet?.atkStats?.attacks[1].dmg
+								: ""
+						}
+						name="dmg-1"
+						onChange={handleChangeAtk}
+					/>
+					<input
+						className="weapon-3-dmg"
+						value={
+							characterSheet?.atkStats?.attacks[2].dmg
+								? characterSheet?.atkStats?.attacks[2].dmg
+								: ""
+						}
+						name="dmg-2"
+						onChange={handleChangeAtk}
+					/>
 					<textarea
 						className="weapon-full-desc"
 						name="fullDescription"
