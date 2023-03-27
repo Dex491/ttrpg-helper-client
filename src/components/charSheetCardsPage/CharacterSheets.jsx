@@ -22,7 +22,7 @@ export default function CharacterSheets() {
 		<>
 			<Header />
 			<div className="container">
-				<h3 className="cardListTitle">D&D 5e Sheets</h3>
+				<h1 className="cardListTitle">D&D 5e Sheets</h1>
 				<CardList characterSheets={characterSheets} />
 				<hr />
 				<p>

@@ -72,7 +72,32 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 
 		if (name === "inspiration") {
 			setCharacterSheet({ ...characterSheet, [name]: checked });
-			console.log(checked);
+		}
+
+		if (
+			name === "success-1" ||
+			name === "success-2" ||
+			name === "success-3" ||
+			name === "failure-1" ||
+			name === "failure-2" ||
+			name === "failure-3"
+		) {
+			const nameKey = name.substring(0, 7);
+			const nameValue = name.charAt(8);
+			console.log(nameKey, nameValue);
+			setCharacterSheet({
+				...characterSheet,
+				healthStats: {
+					...characterSheet.healthStats,
+					deathSaves: {
+						...characterSheet.healthStats.deathSaves,
+						[nameKey]: {
+							...characterSheet.healthStats.deathSaves[nameKey],
+							[nameValue]: checked,
+						},
+					},
+				},
+			});
 		}
 	};
 
@@ -417,15 +442,63 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 							<label htmlFor="success" className="success-label">
 								success
 							</label>
-							<input id="success" type="checkbox" />
-							<input id="success" type="checkbox" />
-							<input id="success" type="checkbox" />
+							<input
+								id="success"
+								name="success-1"
+								type="checkbox"
+								checked={
+									characterSheet?.healthStats?.deathSaves?.success[1] === true
+								}
+								onChange={handleChecked}
+							/>
+							<input
+								id="success"
+								name="success-2"
+								type="checkbox"
+								checked={
+									characterSheet?.healthStats?.deathSaves?.success[2] === true
+								}
+								onChange={handleChecked}
+							/>
+							<input
+								id="success"
+								name="success-3"
+								type="checkbox"
+								checked={
+									characterSheet?.healthStats?.deathSaves?.success[3] === true
+								}
+								onChange={handleChecked}
+							/>
 							<label htmlFor="failure" className="failure-label">
 								failure
 							</label>
-							<input id="failure" type="checkbox" />
-							<input id="failure" type="checkbox" />
-							<input id="failure" type="checkbox" />
+							<input
+								id="failure"
+								name="failure-1"
+								type="checkbox"
+								checked={
+									characterSheet?.healthStats?.deathSaves?.failure[1] === true
+								}
+								onChange={handleChecked}
+							/>
+							<input
+								id="failure"
+								name="failure-2"
+								type="checkbox"
+								checked={
+									characterSheet?.healthStats?.deathSaves?.failure[2] === true
+								}
+								onChange={handleChecked}
+							/>
+							<input
+								id="failure"
+								name="failure-3"
+								type="checkbox"
+								checked={
+									characterSheet?.healthStats?.deathSaves?.failure[3] === true
+								}
+								onChange={handleChecked}
+							/>
 							<label htmlFor="death-saves" className="death-saves-label">
 								death saves
 							</label>
