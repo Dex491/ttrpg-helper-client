@@ -198,10 +198,10 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 				</div>
 				<div className="other-profs-text-box">
 					<textarea
-						name="other-profs-text"
+						name="otherProfs"
 						id="other-profs-text"
-						cols="30"
-						rows="10"
+						value={characterSheet?.otherProfs ? characterSheet.otherProfs : ""}
+						onChange={handleChangeFeats}
 					></textarea>
 					<label htmlFor="other-profs-text"> other profs & languages</label>
 				</div>

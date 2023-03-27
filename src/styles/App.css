@@ -434,6 +434,9 @@ form .button {
 
 .other-profs-text-box textarea {
 	border-radius: 5px;
+	width: 226px;
+	height: 145px;
+	margin-top: 5px;
 }
 
 .other-profs-text-box label {
