@@ -52,10 +52,21 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 	const handleChangeAtk = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
+		console.log(name, value);
+
+		if (name === "fullDescription") {
+			setCharacterSheet({
+				...characterSheet,
+				atkStats: {
+					...characterSheet.atkStats,
+					[name]: value,
+				},
+			});
+			return;
+		}
 
 		const nameKey = name.substring(0, 3);
 		const nameArr = name.charAt(4);
-		console.log(name, value);
 		console.log(nameKey, nameArr);
 
 		setCharacterSheet({
@@ -638,7 +649,7 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 								? characterSheet?.atkStats?.fullDescription
 								: ""
 						}
-						readOnly
+						onChange={handleChangeAtk}
 					></textarea>
 					<label className="atk-box-label"> attacks & spellcasting</label>
 				</div>
