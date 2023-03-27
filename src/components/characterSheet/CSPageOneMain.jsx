@@ -110,6 +110,18 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 		});
 	};
 
+	const handleChangeRPTraits = (e) => {
+		const name = e.target.name;
+		const value = e.target.value;
+		console.log(name, value);
+		setCharacterSheet({
+			...characterSheet,
+			rpTraits: {
+				...characterSheet.rpTraits,
+				[name]: value,
+			},
+		});
+	};
 	const handleChangeHitDice = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
@@ -776,7 +788,7 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 									? characterSheet?.rpTraits?.personalityTraits
 									: ""
 							}
-							readOnly
+							onChange={handleChangeRPTraits}
 						></textarea>
 						<label htmlFor="pers-traits-text">personality traits</label>
 					</div>
@@ -789,33 +801,33 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 									? characterSheet?.rpTraits?.ideals
 									: ""
 							}
-							readOnly
+							onChange={handleChangeRPTraits}
 						></textarea>
 						<label htmlFor="ideals-text">ideals</label>
 					</div>
 					<div className="bonds">
 						<textarea
-							name="bonds-text"
+							name="bonds"
 							id="bonds-text"
 							value={
 								characterSheet?.rpTraits?.bonds
 									? characterSheet?.rpTraits?.bonds
 									: ""
 							}
-							readOnly
+							onChange={handleChangeRPTraits}
 						></textarea>
 						<label htmlFor="bonds-text">bonds</label>
 					</div>
 					<div className="flaws">
 						<textarea
-							name="flaws-text"
+							name="flaws"
 							id="flaws-text"
 							value={
 								characterSheet?.rpTraits?.flaws
 									? characterSheet?.rpTraits?.flaws
 									: ""
 							}
-							readOnly
+							onChange={handleChangeRPTraits}
 						></textarea>
 						<label htmlFor="flaws-text">flaws</label>
 					</div>
@@ -829,7 +841,7 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 								? characterSheet?.featsAndTraits
 								: ""
 						}
-						readOnly
+						onChange={handleChangeRPTraits}
 					></textarea>
 					<label htmlFor="feats">features & traits</label>
 				</div>
