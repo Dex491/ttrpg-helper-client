@@ -113,7 +113,6 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 	const handleChangeRPTraits = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
-		console.log(name, value);
 		setCharacterSheet({
 			...characterSheet,
 			rpTraits: {
@@ -122,6 +121,16 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 			},
 		});
 	};
+
+	const handleChangeFeats = (e) => {
+		const name = e.target.name;
+		const value = e.target.value;
+		setCharacterSheet({
+			...characterSheet,
+			[name]: value,
+		});
+	};
+
 	const handleChangeHitDice = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
@@ -834,14 +843,14 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 				</div>
 				<div className="feats-box">
 					<textarea
-						name="feats"
+						name="featsAndTraits"
 						id="feats"
 						value={
 							characterSheet?.featsAndTraits
 								? characterSheet?.featsAndTraits
 								: ""
 						}
-						onChange={handleChangeRPTraits}
+						onChange={handleChangeFeats}
 					></textarea>
 					<label htmlFor="feats">features & traits</label>
 				</div>
