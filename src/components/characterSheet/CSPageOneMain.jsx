@@ -55,14 +55,13 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 		console.log(name, value);
 
 		if (name === "fullDescription") {
-			setCharacterSheet({
+			return setCharacterSheet({
 				...characterSheet,
 				atkStats: {
 					...characterSheet.atkStats,
 					[name]: value,
 				},
 			});
-			return;
 		}
 
 		const nameKey = name.substring(0, 3);
@@ -79,6 +78,33 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 						...characterSheet.atkStats.attacks[nameArr],
 						[nameKey]: value,
 					},
+				},
+			},
+		});
+	};
+
+	const handleChangeEquip = (e) => {
+		const name = e.target.name;
+		const value = e.target.value;
+		console.log(name, value);
+
+		if (name === "otherEquipment") {
+			return setCharacterSheet({
+				...characterSheet,
+				equipment: {
+					...characterSheet.equipment,
+					[name]: [value],
+				},
+			});
+		}
+
+		setCharacterSheet({
+			...characterSheet,
+			equipment: {
+				...characterSheet.equipment,
+				currency: {
+					...characterSheet.equipment.currency,
+					[name]: Number(value),
 				},
 			},
 		});
@@ -666,7 +692,7 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 											? characterSheet?.equipment?.currency.cp
 											: ""
 									}
-									readOnly
+									onChange={handleChangeEquip}
 								/>
 							</div>
 							<div className="sp-box">
@@ -679,7 +705,7 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 											? characterSheet?.equipment?.currency.sp
 											: ""
 									}
-									readOnly
+									onChange={handleChangeEquip}
 								/>
 							</div>
 							<div className="ep-box">
@@ -692,7 +718,7 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 											? characterSheet?.equipment?.currency.ep
 											: "0"
 									}
-									readOnly
+									onChange={handleChangeEquip}
 								/>
 							</div>
 							<div className="gp-box">
@@ -705,7 +731,7 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 											? characterSheet?.equipment?.currency.gp
 											: ""
 									}
-									readOnly
+									onChange={handleChangeEquip}
 								/>
 							</div>
 							<div className="pp-box">
@@ -718,7 +744,7 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 											? characterSheet?.equipment?.currency.pp
 											: "0"
 									}
-									readOnly
+									onChange={handleChangeEquip}
 								/>
 							</div>
 						</div>
@@ -731,7 +757,7 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 									? characterSheet?.equipment?.otherEquipment
 									: ""
 							}
-							readOnly
+							onChange={handleChangeEquip}
 						></textarea>
 					</div>
 					<label htmlFor="equips-box" className="equips-box-label">
