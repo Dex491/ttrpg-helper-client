@@ -126,6 +126,11 @@ header a,
 	transform: scale(1.2);
 }
 
+.cardListTitle {
+	text-align: left;
+	padding-left: 40px;
+}
+
 /* CHARACTER SHEET */
 
 .sheet {
