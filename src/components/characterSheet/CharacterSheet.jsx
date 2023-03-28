@@ -15,11 +15,20 @@ export default function CharacterSheet() {
 
 	const buttonStyling = {
 		display: "flex",
-		backgroundColor: "#1976d2",
+		backgroundColor: "grey",
 		color: "white",
-		justifyContent: "space-between",
 		alignContent: "center",
-		padding: "1em",
+		p: "0.5em",
+		fontSize: 12,
+	};
+
+	const buttonStylingDelete = {
+		display: "flex",
+		backgroundColor: "rgb(200, 0, 0)",
+		color: "white",
+		alignContent: "center",
+		p: "0.5em",
+		fontSize: 12,
 	};
 
 	useEffect(() => {
@@ -63,9 +72,20 @@ export default function CharacterSheet() {
 			<Header />
 
 			<form className="sheet" onSubmit={handleSubmit}>
-				<Button className="button" type="submit" sx={buttonStyling}>
-					Save
-				</Button>
+				<div className="optionsBar">
+					<Button className="push" type="submit" sx={buttonStyling}>
+						Save
+					</Button>
+					<Button
+						sx={buttonStylingDelete}
+						onClick={() => {
+							console.log("clicked");
+						}}
+					>
+						Delete
+					</Button>
+				</div>
+
 				<CharacterSheetHeader
 					characterSheet={characterSheet}
 					setCharacterSheet={setCharacterSheet}
