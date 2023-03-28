@@ -40,7 +40,6 @@ export default function CharacterSheet() {
 	const fetchCS = async () => {
 		const res = await fetch(`${apiUrl}/characterSheet/${id}`);
 		const data = await res.json();
-		console.log(data);
 		setCharacterSheet(data.data);
 	};
 
@@ -101,7 +100,6 @@ export default function CharacterSheet() {
 					<Button
 						sx={buttonStylingDelete}
 						onClick={() => {
-							console.log("clicked");
 							handleDelete();
 						}}
 					>

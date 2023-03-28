@@ -3,12 +3,9 @@ import Skill from "./Skill";
 import Save from "./Save";
 
 export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
-	console.log(characterSheet);
-
 	const handleChange = (e) => {
 		const name = e.target.name;
 		let value = e.target.value;
-		console.log(name, value);
 
 		if (name === "profBonus" || name === "passPer") {
 			value = Number(value);
@@ -20,7 +17,6 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 	const handleChangeHealthStats = (e) => {
 		const name = e.target.name;
 		let value = e.target.value;
-		console.log(name, value);
 
 		if (name === "AC" || name === "init" || name === "speed") {
 			value = Number(value);
@@ -35,7 +31,6 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 	const handleChangeHP = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
-		console.log(name, value);
 
 		setCharacterSheet({
 			...characterSheet,
@@ -52,7 +47,6 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 	const handleChangeAtk = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
-		console.log(name, value);
 
 		if (name === "fullDescription") {
 			return setCharacterSheet({
@@ -66,7 +60,6 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 
 		const nameKey = name.substring(0, 3);
 		const nameArr = name.charAt(4);
-		console.log(nameKey, nameArr);
 
 		setCharacterSheet({
 			...characterSheet,
@@ -86,7 +79,6 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 	const handleChangeEquip = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
-		console.log(name, value);
 
 		if (name === "otherEquipment") {
 			return setCharacterSheet({
@@ -134,7 +126,6 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 	const handleChangeHitDice = (e) => {
 		const name = e.target.name;
 		const value = e.target.value;
-		console.log(name, value);
 
 		setCharacterSheet({
 			...characterSheet,
@@ -166,7 +157,6 @@ export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
 		) {
 			const nameKey = name.substring(0, 7);
 			const nameValue = name.charAt(8);
-			console.log(nameKey, nameValue);
 			setCharacterSheet({
 				...characterSheet,
 				healthStats: {
