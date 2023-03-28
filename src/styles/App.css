@@ -3,6 +3,9 @@
 	text-align: center;
 }
 
+body {
+	margin: 0;
+}
 /* HEADER */
 
 .headerLogo {
@@ -35,11 +38,6 @@ header a,
 /* FOOTER */
 
 .footer {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	left: auto;
-	width: 100%;
 	text-align: center;
 	padding-bottom: 10;
 	background: #1976d2;
