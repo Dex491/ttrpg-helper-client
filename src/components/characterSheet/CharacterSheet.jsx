@@ -3,8 +3,8 @@ import CharacterSheetHeader from "./CharacterSheetHeader";
 import CSPageOneMain from "./CSPageOneMain";
 import Footer from "../Footer";
 import Header from "../Header";
-import { Button } from "@mui/material";
-import { useParams } from "react-router-dom";
+import Button from "@mui/material/Button";
+import { useParams, useNavigate } from "react-router-dom";
 
 const apiUrl = "http://localhost:4000";
 
@@ -12,6 +12,8 @@ export default function CharacterSheet() {
 	const [characterSheet, setCharacterSheet] = useState([]);
 	let { id } = useParams();
 	id++;
+
+	const nav = useNavigate();
 
 	const buttonStyling = {
 		display: "flex",
@@ -67,6 +69,26 @@ export default function CharacterSheet() {
 		}
 	};
 
+	const handleDelete = async (e) => {
+		try {
+			const options = {
+				method: "DELETE",
+				headers: {
+					"Content-Type": "application/json",
+					// authorization: `Bearer ${accessToken}`,
+				},
+				body: JSON.stringify(characterSheet),
+			};
+
+			const res = await fetch(`${apiUrl}/characterSheet/${id}`, options);
+			const data = await res.json();
+			setCharacterSheet(data.data);
+			nav("/characterSheets");
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	return (
 		<>
 			<Header />
@@ -80,6 +102,7 @@ export default function CharacterSheet() {
 						sx={buttonStylingDelete}
 						onClick={() => {
 							console.log("clicked");
+							handleDelete();
 						}}
 					>
 						Delete
