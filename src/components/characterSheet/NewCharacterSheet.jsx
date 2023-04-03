@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 import Footer from "../Footer";
 import Header from "../Header";
@@ -10,14 +11,15 @@ const apiUrl = "http://localhost:4000";
 
 export default function NewCharacterSheet() {
 	const [characterSheet, setCharacterSheet] = useState([]);
+	const nav = useNavigate();
 
 	const buttonStyling = {
 		display: "flex",
-		backgroundColor: "#1976d2",
+		backgroundColor: "grey",
 		color: "white",
-		justifyContent: "space-between",
 		alignContent: "center",
-		padding: "1em",
+		p: "0.5em",
+		fontSize: 12,
 	};
 
 	const handleSubmit = async (e) => {
@@ -36,6 +38,7 @@ export default function NewCharacterSheet() {
 			const res = await fetch(`${apiUrl}/characterSheet`, options);
 			const data = await res.json();
 			setCharacterSheet(data.data);
+			nav("/characterSheets");
 		} catch (error) {
 			console.log(error);
 		}
@@ -45,9 +48,11 @@ export default function NewCharacterSheet() {
 		<>
 			<Header />
 			<form className="sheet" onSubmit={handleSubmit}>
-				<Button className="button" type="submit" sx={buttonStyling}>
-					Save
-				</Button>
+				<div className="optionsBar">
+					<Button className="push" type="submit" sx={buttonStyling}>
+						Save
+					</Button>
+				</div>
 				<CharacterSheetHeader
 					characterSheet={characterSheet}
 					setCharacterSheet={setCharacterSheet}
