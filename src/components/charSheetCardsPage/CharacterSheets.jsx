@@ -26,10 +26,11 @@ export default function CharacterSheets() {
 				<CardList characterSheets={characterSheets} />
 				<hr />
 				<p>
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique
-					ipsa laboriosam dolorem animi adipisci, error rem consectetur cumque
-					quidem! Eveniet amet possimus doloremque omnis eligendi molestias
-					reprehenderit dolor modi minima?
+					You can use the above cards to view saved character sheets and create
+					new ones, and as you can see above there's a sample character -
+					Wilric, a level 10 warlock. If you're logged in as a{" "}
+					<span style={{ fontWeight: 700 }}>Guest</span> all of your changes
+					will only be <span style={{ fontWeight: 700 }}>local.</span>
 				</p>
 			</div>
 
