@@ -1,7 +1,10 @@
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import "react-dropdown/style.css";
 
 export default function Header({ supabase, user }) {
+	const nav = useNavigate();
+
 	const buttonStyling = {
 		display: "flex",
 		backgroundColor: "grey",
@@ -13,6 +16,7 @@ export default function Header({ supabase, user }) {
 
 	async function signOutUser() {
 		const { error } = await supabase.auth.signOut();
+		nav("/login");
 	}
 
 	console.log(user);
@@ -30,10 +34,14 @@ export default function Header({ supabase, user }) {
 					Home
 				</Button>
 
-				<Button className="push" sx={buttonStyling} href={`/characterSheets`}>
+				<Button className="push" sx={buttonStyling} href="/characterSheets">
 					Character Sheets
 				</Button>
-				<Button sx={buttonStyling} onClick={() => signOutUser()} href="/login">
+				<Button
+					sx={buttonStyling}
+					className="signOutButton"
+					onClick={() => signOutUser()}
+				>
 					Sign out
 				</Button>
 				<img

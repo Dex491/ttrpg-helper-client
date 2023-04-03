@@ -35,6 +35,11 @@ header a,
 	margin-left: auto !important;
 }
 
+.signOutButton {
+	padding-top: 0.5em !important;
+	padding-bottom: 0.5em !important;
+}
+
 .headerUserImage {
 	height: 50px;
 	width: 50px;
