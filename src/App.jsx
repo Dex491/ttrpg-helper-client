@@ -35,18 +35,17 @@ export default function App() {
 			<Routes>
 				<Route
 					path="/characterSheet/:id"
-					element={<CharacterSheet supabase={supabase} />}
+					element={<CharacterSheet supabase={supabase} user={user} />}
 				/>
-				<Route path="/" element={<Home supabase={supabase} />} />
+				<Route path="/" element={<Home supabase={supabase} user={user} />} />
 				<Route path="/login" element={<Login supabase={supabase} />} />
-				<Route path="/success" element={<Success />} />
 				<Route
 					path="/characterSheets"
-					element={<CharacterSheets supabase={supabase} />}
+					element={<CharacterSheets supabase={supabase} user={user} />}
 				/>
 				<Route
 					path="/newCharacterSheet"
-					element={<NewCharacterSheet supabase={supabase} />}
+					element={<NewCharacterSheet supabase={supabase} user={user} />}
 				/>
 			</Routes>
 		</>
