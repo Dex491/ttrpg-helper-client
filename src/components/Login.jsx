@@ -1,6 +1,6 @@
-import { createClient } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Login({ supabase }) {
@@ -13,6 +13,8 @@ export default function Login({ supabase }) {
 			nav("/login");
 		}
 	});
+
+	useEffect(() => {}, []);
 
 	return (
 		<>
