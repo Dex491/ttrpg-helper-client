@@ -2,7 +2,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { Button } from "@mui/material";
 
-export default function Home() {
+export default function Home({ supabase }) {
 	const buttonStyling = {
 		display: "flex",
 		backgroundColor: "#1976d2",
@@ -14,7 +14,7 @@ export default function Home() {
 
 	return (
 		<>
-			<Header />
+			<Header supabase={supabase} />
 			<div className="home-main">
 				<h1>Welcome!</h1>
 				<p>

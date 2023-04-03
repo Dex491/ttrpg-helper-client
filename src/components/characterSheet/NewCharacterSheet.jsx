@@ -9,7 +9,7 @@ import CSPageOneMain from "./CSPageOneMain";
 
 const apiUrl = "http://localhost:4000";
 
-export default function NewCharacterSheet() {
+export default function NewCharacterSheet({ supabase }) {
 	const [characterSheet, setCharacterSheet] = useState([]);
 	const nav = useNavigate();
 
@@ -46,7 +46,7 @@ export default function NewCharacterSheet() {
 
 	return (
 		<>
-			<Header />
+			<Header supabase={supabase} />
 			<form className="sheet" onSubmit={handleSubmit}>
 				<div className="optionsBar">
 					<Button className="push" type="submit" sx={buttonStyling}>

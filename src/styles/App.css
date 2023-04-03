@@ -63,9 +63,9 @@ header a,
 	justify-content: center;
 	border: 2px solid gray;
 	border-radius: 20px;
-	/* margin-right: 0; */
-	margin: 20px;
-	/* TODO: Align center */
+	margin: 0 auto;
+	margin-top: 20vh;
+	margin-bottom: 20vh;
 }
 
 /* HOME */

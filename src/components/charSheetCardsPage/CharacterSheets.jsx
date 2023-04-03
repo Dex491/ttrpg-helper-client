@@ -5,7 +5,7 @@ import CardList from "./CardList";
 
 const apiUrl = "http://localhost:4000";
 
-export default function CharacterSheets() {
+export default function CharacterSheets({ supabase }) {
 	const [characterSheets, setCharacterSheets] = useState([]);
 
 	useEffect(() => {
@@ -20,7 +20,7 @@ export default function CharacterSheets() {
 
 	return (
 		<>
-			<Header />
+			<Header supabase={supabase} />
 			<div className="container">
 				<h1 className="cardListTitle">D&D 5e Sheets</h1>
 				<CardList characterSheets={characterSheets} />

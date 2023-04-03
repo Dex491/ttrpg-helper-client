@@ -8,7 +8,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 const apiUrl = "http://localhost:4000";
 
-export default function CharacterSheet() {
+export default function CharacterSheet({ supabase }) {
 	const [characterSheet, setCharacterSheet] = useState([]);
 	let { id } = useParams();
 	id++;
@@ -90,7 +90,7 @@ export default function CharacterSheet() {
 
 	return (
 		<>
-			<Header />
+			<Header supabase={supabase} />
 
 			<form className="sheet" onSubmit={handleSubmit}>
 				<div className="optionsBar">

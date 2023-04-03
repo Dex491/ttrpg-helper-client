@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import "react-dropdown/style.css";
 
-export default function Header() {
+export default function Header({ supabase }) {
 	const buttonStyling = {
 		display: "flex",
 		backgroundColor: "grey",
@@ -10,6 +10,10 @@ export default function Header() {
 		alignContent: "center",
 		padding: "1em",
 	};
+
+	async function signOutUser() {
+		const { error } = await supabase.auth.signOut();
+	}
 
 	return (
 		<AppBar>
@@ -27,8 +31,8 @@ export default function Header() {
 				<Button className="push" sx={buttonStyling} href={`/characterSheets`}>
 					Character Sheets
 				</Button>
-				<Button sx={buttonStyling} href="/logOut">
-					Log out
+				<Button sx={buttonStyling} onClick={() => signOutUser()} href="/login">
+					Sign out
 				</Button>
 			</Toolbar>
 		</AppBar>
