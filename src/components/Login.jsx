@@ -24,7 +24,8 @@ export default function Login({ supabase }) {
 					appearance={{ theme: ThemeSupa }}
 					theme="dark"
 					providers={[
-						// "google", "github",
+						// "google",
+						"github",
 						"discord",
 					]}
 				/>
