@@ -15,7 +15,6 @@ export default function CharacterSheets({ supabase, user }) {
 	const fetchAllCS = async () => {
 		const res = await fetch(`${apiUrl}/characterSheet`);
 		const data = await res.json();
-		console.log(data);
 		setCharacterSheets(data);
 	};
 

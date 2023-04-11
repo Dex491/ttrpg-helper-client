@@ -4,12 +4,10 @@ import SheetCard from "./SheetCard";
 
 export default function CardList({ characterSheets, user }) {
 	const data = characterSheets?.data;
-	console.log(data);
 
 	const filteredData = characterSheets?.data
 		? data.filter((item) => item.userID === user.id)
 		: "loading";
-	console.log(filteredData);
 
 	return (
 		<ul className="cardList">

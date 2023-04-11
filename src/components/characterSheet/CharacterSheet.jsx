@@ -41,7 +41,6 @@ export default function CharacterSheet({ supabase, user }) {
 		const res = await fetch(`${apiUrl}/characterSheet/${id}`);
 		const data = await res.json();
 		setCharacterSheet(data.data);
-		console.log(data.data);
 	};
 
 	if (characterSheet === undefined) {
