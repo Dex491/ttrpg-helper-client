@@ -146,6 +146,10 @@ header a,
 	font-size: 1.17em;
 }
 
+.sampleCard {
+	background: #1976d2;
+}
+
 /* CHARACTER SHEET */
 
 .sheet {

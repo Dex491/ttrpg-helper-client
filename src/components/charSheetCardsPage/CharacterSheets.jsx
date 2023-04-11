@@ -24,14 +24,16 @@ export default function CharacterSheets({ supabase, user }) {
 			<Header supabase={supabase} user={user} />
 			<div className="container">
 				<h1 className="cardListTitle">D&D 5e Sheets</h1>
-				<CardList characterSheets={characterSheets} />
+				<CardList characterSheets={characterSheets} user={user} />
 				<hr />
 				<p>
 					You can use the above cards to view saved character sheets and create
-					new ones, and as you can see above there's a sample character -
-					Wilric, a level 10 warlock. If you're logged in as a{" "}
-					<span style={{ fontWeight: 700 }}>Guest</span> all of your changes
-					will only be <span style={{ fontWeight: 700 }}>local.</span>
+					new ones, and as you can see above there's a sample character in
+					<span style={{ color: "#19a4d2", fontWeight: 700 }}> blue</span> -
+					Wilric, a level 10 warlock - of which you can save a copy. If you're
+					logged in as a<span style={{ fontWeight: 700 }}> Guest</span> all of
+					your changes will only be{" "}
+					<span style={{ fontWeight: 700 }}>local.</span>
 				</p>
 			</div>
 
