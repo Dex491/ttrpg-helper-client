@@ -1,8 +1,6 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import { Button } from "@mui/material";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Home({ supabase, user }) {
 	const buttonStyling = {
@@ -13,15 +11,6 @@ export default function Home({ supabase, user }) {
 		alignContent: "center",
 		padding: "1em",
 	};
-
-	const nav = useNavigate();
-
-	useEffect(() => {
-		if (!user.id) {
-			console.log("no user");
-			nav("/login");
-		}
-	}, [user]);
 
 	return (
 		<>
