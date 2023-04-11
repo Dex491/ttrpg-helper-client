@@ -15,6 +15,12 @@ export default function CharacterSheet({ supabase, user }) {
 
 	const nav = useNavigate();
 
+	if (!characterSheet.userID) {
+		console.log("sample character");
+	} else if (user.id !== characterSheet.userID) {
+		nav("/characterSheets");
+	}
+
 	const buttonStyling = {
 		display: "flex",
 		backgroundColor: "grey",
@@ -51,21 +57,43 @@ export default function CharacterSheet({ supabase, user }) {
 		e.preventDefault();
 		const userID = user.id;
 
-		try {
-			const options = {
-				method: "PUT",
-				headers: {
-					"Content-Type": "application/json",
-					// authorization: `Bearer ${accessToken}`,
-				},
-				body: JSON.stringify({ csData: characterSheet, userID }),
-			};
+		if (!characterSheet.userID) {
+			try {
+				characterSheet.userID = user.id;
+				const options = {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						// authorization: `Bearer ${accessToken}`,
+					},
+					body: JSON.stringify(characterSheet),
+				};
 
-			const res = await fetch(`${apiUrl}/characterSheet/${id}`, options);
-			const data = await res.json();
-			setCharacterSheet(data.data.data);
-		} catch (error) {
-			console.log(error);
+				const res = await fetch(`${apiUrl}/characterSheet`, options);
+				const data = await res.json();
+				setCharacterSheet(data.data);
+				console.log(data.data);
+				nav("/characterSheets");
+			} catch (error) {
+				console.log(error);
+			}
+		} else {
+			try {
+				const options = {
+					method: "PUT",
+					headers: {
+						"Content-Type": "application/json",
+						// authorization: `Bearer ${accessToken}`,
+					},
+					body: JSON.stringify(characterSheet, userID),
+				};
+
+				const res = await fetch(`${apiUrl}/characterSheet/${id}`, options);
+				const data = await res.json();
+				setCharacterSheet(data.data);
+			} catch (error) {
+				console.log(error);
+			}
 		}
 	};
 
@@ -96,13 +124,14 @@ export default function CharacterSheet({ supabase, user }) {
 			<form className="sheet" onSubmit={handleSubmit}>
 				<div className="optionsBar">
 					<Button className="push" type="submit" sx={buttonStyling}>
-						Save
+						{!characterSheet.userID ? "Save Copy" : "Save"}
 					</Button>
 					<Button
 						sx={buttonStylingDelete}
 						onClick={() => {
 							handleDelete();
 						}}
+						disabled={!characterSheet.userID ? true : false}
 					>
 						Delete
 					</Button>
