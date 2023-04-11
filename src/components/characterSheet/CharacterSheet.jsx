@@ -15,8 +15,8 @@ export default function CharacterSheet({ supabase, user }) {
 
 	const nav = useNavigate();
 
-	if (!characterSheet.userID) {
-		console.log("sample character");
+	if (!characterSheet?.userID) {
+		console.log("");
 	} else if (user.id !== characterSheet.userID) {
 		nav("/characterSheets");
 	}

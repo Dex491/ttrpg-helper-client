@@ -38,7 +38,6 @@ export default function NewCharacterSheet({ supabase, user }) {
 			const res = await fetch(`${apiUrl}/characterSheet`, options);
 			const data = await res.json();
 			setCharacterSheet(data.data);
-			console.log(data.data);
 			nav("/characterSheets");
 		} catch (error) {
 			console.log(error);

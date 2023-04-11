@@ -19,8 +19,6 @@ export default function Header({ supabase, user }) {
 		nav("/login");
 	}
 
-	console.log(user);
-
 	return (
 		<AppBar>
 			<Toolbar className="toolBar">
