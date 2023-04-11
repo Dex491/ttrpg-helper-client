@@ -7,7 +7,7 @@ import Header from "../Header";
 import CharacterSheetHeader from "./CharacterSheetHeader";
 import CSPageOneMain from "./CSPageOneMain";
 
-const apiUrl = "http://localhost:4000";
+const apiUrl = "https://ttrpg-helper-server-production.up.railway.app";
 
 export default function NewCharacterSheet({ supabase, user }) {
 	const [characterSheet, setCharacterSheet] = useState([]);

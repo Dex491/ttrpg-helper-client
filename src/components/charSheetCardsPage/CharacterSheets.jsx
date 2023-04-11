@@ -3,7 +3,7 @@ import Footer from "../Footer";
 import Header from "../Header";
 import CardList from "./CardList";
 
-const apiUrl = "http://localhost:4000";
+const apiUrl = "https://ttrpg-helper-server-production.up.railway.app";
 
 export default function CharacterSheets({ supabase, user }) {
 	const [characterSheets, setCharacterSheets] = useState([]);

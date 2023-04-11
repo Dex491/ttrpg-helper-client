@@ -6,7 +6,7 @@ import Header from "../Header";
 import Button from "@mui/material/Button";
 import { useParams, useNavigate } from "react-router-dom";
 
-const apiUrl = "http://localhost:4000";
+const apiUrl = "https://ttrpg-helper-server-production.up.railway.app";
 
 export default function CharacterSheet({ supabase, user }) {
 	const [characterSheet, setCharacterSheet] = useState([]);
