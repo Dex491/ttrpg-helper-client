@@ -7,7 +7,6 @@ import CharacterSheets from "./components/charSheetCardsPage/CharacterSheets";
 import NewCharacterSheet from "./components/characterSheet/NewCharacterSheet";
 import Home from "./components/Home";
 import Login from "./components/Login";
-import Success from "./components/Success";
 import "./styles/App.css";
 
 const supabase = createClient(
