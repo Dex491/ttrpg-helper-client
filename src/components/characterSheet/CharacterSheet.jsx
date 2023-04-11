@@ -41,6 +41,7 @@ export default function CharacterSheet({ supabase, user }) {
 		const res = await fetch(`${apiUrl}/characterSheet/${id}`);
 		const data = await res.json();
 		setCharacterSheet(data.data);
+		console.log(data.data);
 	};
 
 	if (characterSheet === undefined) {
@@ -49,6 +50,7 @@ export default function CharacterSheet({ supabase, user }) {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		const userID = user.id;
 
 		try {
 			const options = {
@@ -57,12 +59,12 @@ export default function CharacterSheet({ supabase, user }) {
 					"Content-Type": "application/json",
 					// authorization: `Bearer ${accessToken}`,
 				},
-				body: JSON.stringify(characterSheet),
+				body: JSON.stringify({ csData: characterSheet, userID }),
 			};
 
 			const res = await fetch(`${apiUrl}/characterSheet/${id}`, options);
 			const data = await res.json();
-			setCharacterSheet(data.data);
+			setCharacterSheet(data.data.data);
 		} catch (error) {
 			console.log(error);
 		}

@@ -3,6 +3,7 @@ import Skill from "./Skill";
 import Save from "./Save";
 
 export default function CSPageOneMain({ characterSheet, setCharacterSheet }) {
+	console.log(characterSheet);
 	const handleChange = (e) => {
 		const name = e.target.name;
 		let value = e.target.value;
