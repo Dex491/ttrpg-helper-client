@@ -5,6 +5,8 @@ import "react-dropdown/style.css";
 export default function Header({ supabase, user }) {
 	const nav = useNavigate();
 
+	console.log(user);
+
 	const buttonStyling = {
 		display: "flex",
 		backgroundColor: "grey",
