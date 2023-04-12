@@ -8,12 +8,12 @@ export default function Header({ supabase, user }) {
 
 	console.log(user);
 
-	useEffect(() => {
-		if (!user.id) {
-			console.log("no user");
-			nav("/login");
-		}
-	}, [user]);
+	// useEffect(() => {
+	// 	if (!user.id) {
+	// 		console.log("no user");
+	// 		nav("/login");
+	// 	}
+	// }, [user]);
 
 	const buttonStyling = {
 		display: "flex",

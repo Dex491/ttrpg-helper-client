@@ -3,7 +3,7 @@ import Footer from "../Footer";
 import Header from "../Header";
 import CardList from "./CardList";
 
-const apiUrl = "https://ttrpg-helper-server-production.up.railway.app";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 export default function CharacterSheets({ supabase, user }) {
 	const [characterSheets, setCharacterSheets] = useState([]);

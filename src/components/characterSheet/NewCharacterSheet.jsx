@@ -7,7 +7,7 @@ import Header from "../Header";
 import CharacterSheetHeader from "./CharacterSheetHeader";
 import CSPageOneMain from "./CSPageOneMain";
 
-const apiUrl = "https://ttrpg-helper-server-production.up.railway.app";
+const apiUrl = import.meta.env.VITE_API_URL;
 
 export default function NewCharacterSheet({ supabase, user }) {
 	const [characterSheet, setCharacterSheet] = useState([]);

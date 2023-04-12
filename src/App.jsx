@@ -10,8 +10,8 @@ import Login from "./components/Login";
 import "./styles/App.css";
 
 const supabase = createClient(
-	"https://ebnelctvcmterhobcrwm.supabase.co",
-	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVibmVsY3R2Y210ZXJob2JjcndtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzg4MDY3NzcsImV4cCI6MTk5NDM4Mjc3N30.yJ3TtK_mo4aTgsQHbhgeq0CGfUbNrl87tXlkJpNzS_k"
+	import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_URL,
+	import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
 export default function App() {
