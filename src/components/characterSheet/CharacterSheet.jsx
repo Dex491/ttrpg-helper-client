@@ -38,6 +38,13 @@ export default function CharacterSheet({ supabase, user, apiUrl }) {
 	};
 
 	useEffect(() => {
+		if (!user.id) {
+			console.log("no user");
+			nav("/login");
+		}
+	}, [user]);
+
+	useEffect(() => {
 		fetchCS();
 	}, []);
 

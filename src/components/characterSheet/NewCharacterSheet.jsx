@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 
@@ -10,6 +10,13 @@ import CSPageOneMain from "./CSPageOneMain";
 export default function NewCharacterSheet({ supabase, user, apiUrl }) {
 	const [characterSheet, setCharacterSheet] = useState([]);
 	const nav = useNavigate();
+
+	useEffect(() => {
+		if (!user.id) {
+			console.log("no user");
+			nav("/login");
+		}
+	}, [user]);
 
 	const buttonStyling = {
 		display: "flex",
