@@ -22,7 +22,7 @@ if (import.meta.env.VERCEL_ENV === "development") {
 	apiUrl = process.env.VITE_API_URL;
 	supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 	supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-	console.log(supabaseUrl);
+	console.log(apiUrl, supabaseUrl, supabaseAnonKey);
 }
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
