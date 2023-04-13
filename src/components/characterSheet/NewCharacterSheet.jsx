@@ -7,9 +7,7 @@ import Header from "../Header";
 import CharacterSheetHeader from "./CharacterSheetHeader";
 import CSPageOneMain from "./CSPageOneMain";
 
-const apiUrl = import.meta.env.VITE_API_URL;
-
-export default function NewCharacterSheet({ supabase, user }) {
+export default function NewCharacterSheet({ supabase, user, apiUrl }) {
 	const [characterSheet, setCharacterSheet] = useState([]);
 	const nav = useNavigate();
 

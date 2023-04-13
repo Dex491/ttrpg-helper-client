@@ -6,9 +6,7 @@ import Header from "../Header";
 import Button from "@mui/material/Button";
 import { useParams, useNavigate } from "react-router-dom";
 
-const apiUrl = import.meta.env.VITE_API_URL;
-
-export default function CharacterSheet({ supabase, user }) {
+export default function CharacterSheet({ supabase, user, apiUrl }) {
 	const [characterSheet, setCharacterSheet] = useState([]);
 	let { id } = useParams();
 	id++;

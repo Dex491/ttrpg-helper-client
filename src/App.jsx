@@ -9,6 +9,15 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import "./styles/App.css";
 
+let apiUrl;
+
+if (import.meta.env.MODE === "development") {
+	console.log(import.meta.env.MODE);
+	apiUrl = import.meta.env.VITE_DEV_API_URL;
+} else {
+	apiUrl = import.meta.env.VITE_API_URL;
+}
+
 const supabase = createClient(
 	import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_URL,
 	import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -33,17 +42,27 @@ export default function App() {
 			<Routes>
 				<Route
 					path="/characterSheet/:id"
-					element={<CharacterSheet supabase={supabase} user={user} />}
+					element={
+						<CharacterSheet supabase={supabase} user={user} apiUrl={apiUrl} />
+					}
 				/>
 				<Route path="/" element={<Home supabase={supabase} user={user} />} />
 				<Route path="/login" element={<Login supabase={supabase} />} />
 				<Route
 					path="/characterSheets"
-					element={<CharacterSheets supabase={supabase} user={user} />}
+					element={
+						<CharacterSheets supabase={supabase} user={user} apiUrl={apiUrl} />
+					}
 				/>
 				<Route
 					path="/newCharacterSheet"
-					element={<NewCharacterSheet supabase={supabase} user={user} />}
+					element={
+						<NewCharacterSheet
+							supabase={supabase}
+							user={user}
+							apiUrl={apiUrl}
+						/>
+					}
 				/>
 			</Routes>
 		</>

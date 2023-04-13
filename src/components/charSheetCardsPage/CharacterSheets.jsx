@@ -3,9 +3,7 @@ import Footer from "../Footer";
 import Header from "../Header";
 import CardList from "./CardList";
 
-const apiUrl = import.meta.env.VITE_API_URL;
-
-export default function CharacterSheets({ supabase, user }) {
+export default function CharacterSheets({ supabase, user, apiUrl }) {
 	const [characterSheets, setCharacterSheets] = useState([]);
 
 	useEffect(() => {
