@@ -19,9 +19,9 @@ if (import.meta.env.MODE === "development") {
 	supabaseUrl = import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_URL;
 	supabaseAnonKey = import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_ANON_KEY;
 } else {
-	apiUrl = import.meta.env.VITE_API_URL;
-	supabaseUrl = import.meta.env.NEXT_PUBLIC_SUPABASE_URL;
-	supabaseAnonKey = import.meta.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+	apiUrl = VITE_API_URL;
+	supabaseUrl = NEXT_PUBLIC_SUPABASE_URL;
+	supabaseAnonKey = NEXT_PUBLIC_SUPABASE_ANON_KEY;
 }
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
