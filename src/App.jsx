@@ -10,18 +10,21 @@ import Login from "./components/Login";
 import "./styles/App.css";
 
 let apiUrl;
+let supabaseUrl;
+let supabaseAnonKey;
 
 if (import.meta.env.MODE === "development") {
 	console.log(import.meta.env.MODE);
 	apiUrl = import.meta.env.VITE_DEV_API_URL;
+	supabaseUrl = import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_URL;
+	supabaseAnonKey = import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_ANON_KEY;
 } else {
 	apiUrl = import.meta.env.VITE_API_URL;
+	supabaseUrl = import.meta.env.NEXT_PUBLIC_SUPABASE_URL;
+	supabaseAnonKey = import.meta.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 }
 
-const supabase = createClient(
-	import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_URL,
-	import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_ANON_KEY
-);
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export default function App() {
 	const [user, setUser] = useState({});
