@@ -13,15 +13,15 @@ let apiUrl;
 let supabaseUrl;
 let supabaseAnonKey;
 
-if (import.meta.env.MODE === "development") {
+if (import.meta.env.VERCEL_ENV === "development") {
 	console.log(import.meta.env.MODE);
 	apiUrl = import.meta.env.VITE_DEV_API_URL;
 	supabaseUrl = import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_URL;
 	supabaseAnonKey = import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_ANON_KEY;
 } else {
-	apiUrl = import.meta.env.VITE_API_URL;
-	supabaseUrl = import.meta.env.NEXT_PUBLIC_SUPABASE_URL;
-	supabaseAnonKey = import.meta.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+	apiUrl = process.env.VITE_API_URL;
+	supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+	supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 	console.log(supabaseUrl);
 }
 
