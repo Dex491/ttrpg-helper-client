@@ -13,7 +13,7 @@ export default function NewCharacterSheet({ supabase, user, apiUrl }) {
 
 	useEffect(() => {
 		if (!user.id) {
-			console.log("no user");
+			console.log("no user id found");
 			nav("/login");
 		}
 	}, [user]);
