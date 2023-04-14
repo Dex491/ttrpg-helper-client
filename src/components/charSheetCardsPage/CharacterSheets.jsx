@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "../Footer";
 import Header from "../Header";
 import CardList from "./CardList";
 
 export default function CharacterSheets({ supabase, user, apiUrl }) {
 	const [characterSheets, setCharacterSheets] = useState([]);
+	nav = useNavigate;
 
 	useEffect(() => {
 		if (!user.id) {
