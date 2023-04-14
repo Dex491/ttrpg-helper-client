@@ -39,7 +39,9 @@ export default function CharacterSheet({ supabase, user, apiUrl }) {
 
 	useEffect(() => {
 		if (!user.id) {
-			console.log("no user");
+			console.log(
+				"No user id found or you don't have permission to view this page"
+			);
 			nav("/login");
 		}
 	}, [user]);
@@ -77,7 +79,6 @@ export default function CharacterSheet({ supabase, user, apiUrl }) {
 				const res = await fetch(`${apiUrl}/characterSheet`, options);
 				const data = await res.json();
 				setCharacterSheet(data.data);
-				console.log(data.data);
 				nav("/characterSheets");
 			} catch (error) {
 				console.log(error);
