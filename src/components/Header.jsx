@@ -40,7 +40,7 @@ export default function Header({ supabase, user }) {
 					className="signOutButton"
 					onClick={() => signOutUser()}
 				>
-					Sign out
+					{user?.id ? "Sign out" : "Log in"}
 				</Button>
 				<img
 					src={

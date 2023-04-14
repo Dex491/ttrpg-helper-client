@@ -1,19 +1,10 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Footer from "../Footer";
 import Header from "../Header";
 import CardList from "./CardList";
 
 export default function CharacterSheets({ supabase, user, apiUrl }) {
 	const [characterSheets, setCharacterSheets] = useState([]);
-	const nav = useNavigate();
-
-	useEffect(() => {
-		if (!user.id) {
-			console.log("no user id found");
-			nav("/login");
-		}
-	}, [user]);
 
 	useEffect(() => {
 		fetchAllCS();
