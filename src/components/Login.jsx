@@ -23,7 +23,7 @@ export default function Login({ supabase }) {
 					supabaseClient={supabase}
 					appearance={{ theme: ThemeSupa }}
 					theme="dark"
-					providers={["github", "discord"]}
+					providers={["google", "github", "discord"]}
 				/>
 			</div>
 		</>

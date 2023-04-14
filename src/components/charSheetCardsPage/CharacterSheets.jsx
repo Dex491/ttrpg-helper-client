@@ -6,7 +6,7 @@ import CardList from "./CardList";
 
 export default function CharacterSheets({ supabase, user, apiUrl }) {
 	const [characterSheets, setCharacterSheets] = useState([]);
-	const nav = useNavigate;
+	const nav = useNavigate();
 
 	useEffect(() => {
 		if (!user.id) {
