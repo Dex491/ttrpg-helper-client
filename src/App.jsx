@@ -18,7 +18,6 @@ if (import.meta.env.VITE_MODE === "dev") {
 	apiUrl = import.meta.env.VITE_DEV_API_URL;
 } else {
 	apiUrl = import.meta.env.VITE_API_URL;
-	console.log(apiUrl, supabaseUrl, supabaseAnonKey);
 }
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
