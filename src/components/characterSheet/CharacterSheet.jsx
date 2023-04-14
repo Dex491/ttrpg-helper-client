@@ -50,6 +50,7 @@ export default function CharacterSheet({ supabase, user, apiUrl }) {
 		fetchCS();
 	}, []);
 
+	//TODO: check if user is guest, if so fetch from local storage
 	const fetchCS = async () => {
 		const res = await fetch(`${apiUrl}/characterSheet/${id}`);
 		const data = await res.json();

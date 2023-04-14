@@ -27,8 +27,7 @@ export default function Home({ supabase, user }) {
 					I've learned a lot during my time working on this, and this project is
 					at a point where I'm happy leaving it as is and working on other
 					ideas; though I will definitely come back to this again! If you want
-					to follow my progress keep checking back here, or you can watch my
-					repos below:
+					to follow my progress you can watch my repos below:
 				</p>
 				<div className="flex-no-margin">
 					<Button
