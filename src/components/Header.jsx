@@ -1,17 +1,9 @@
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import "react-dropdown/style.css";
 
 export default function Header({ supabase, user }) {
 	const nav = useNavigate();
-
-	useEffect(() => {
-		if (!user.id) {
-			console.log("no user id found");
-			nav("/login");
-		}
-	}, [user]);
 
 	const buttonStyling = {
 		display: "flex",

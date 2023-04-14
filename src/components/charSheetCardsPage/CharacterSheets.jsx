@@ -7,6 +7,13 @@ export default function CharacterSheets({ supabase, user, apiUrl }) {
 	const [characterSheets, setCharacterSheets] = useState([]);
 
 	useEffect(() => {
+		if (!user.id) {
+			console.log("no user id found");
+			nav("/login");
+		}
+	}, [user]);
+
+	useEffect(() => {
 		fetchAllCS();
 	}, []);
 
