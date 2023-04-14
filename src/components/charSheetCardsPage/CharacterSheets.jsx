@@ -25,12 +25,12 @@ export default function CharacterSheets({ supabase, user, apiUrl }) {
 				<hr />
 				<p>
 					You can use the above cards to view saved character sheets and create
-					new ones, and as you can see above there's a sample character in
+					new ones, and as you can also see above there's a sample character in
 					<span style={{ color: "#19a4d2", fontWeight: 700 }}> blue</span> -
 					Wilric, a level 10 warlock - of which you can save a copy. If you're
 					logged in as a<span style={{ fontWeight: 700 }}> Guest</span> all of
-					your changes will only be{" "}
-					<span style={{ fontWeight: 700 }}>local.</span>
+					your changes will only be
+					<span style={{ fontWeight: 700 }}> local.</span>
 				</p>
 			</div>
 
