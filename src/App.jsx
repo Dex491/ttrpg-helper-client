@@ -10,18 +10,14 @@ import Login from "./components/Login";
 import "./styles/App.css";
 
 let apiUrl;
-let supabaseUrl;
-let supabaseAnonKey;
+const supabaseUrl = import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-if (import.meta.env.VERCEL_ENV === "development") {
+if (import.meta.env.VITE_MODE === "dev") {
 	console.log(import.meta.env.MODE);
 	apiUrl = import.meta.env.VITE_DEV_API_URL;
-	supabaseUrl = import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_URL;
-	supabaseAnonKey = import.meta.env.VITE_NEXT_PUBLIC_SUPABASE_ANON_KEY;
 } else {
-	apiUrl = process.env.VITE_API_URL;
-	supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-	supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+	apiUrl = import.meta.env.VITE_API_URL;
 	console.log(apiUrl, supabaseUrl, supabaseAnonKey);
 }
 
