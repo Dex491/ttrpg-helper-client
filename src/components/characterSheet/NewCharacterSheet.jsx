@@ -27,7 +27,6 @@ export default function NewCharacterSheet({ supabase, user, apiUrl }) {
 		fontSize: 12,
 	};
 
-	//TODO: check if user is guest, if so change submit to only local storage?
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		characterSheet.userID = user.id;

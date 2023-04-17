@@ -10,7 +10,6 @@ export default function CharacterSheets({ supabase, user, apiUrl }) {
 		fetchAllCS();
 	}, [user]);
 
-	//TODO: check if user is guest, if so fetch from local storage
 	const fetchAllCS = async () => {
 		const res = await fetch(`${apiUrl}/characterSheet`);
 		const data = await res.json();
@@ -29,9 +28,10 @@ export default function CharacterSheets({ supabase, user, apiUrl }) {
 					new ones, and as you can also see above there's a sample character in
 					<span style={{ color: "#19a4d2", fontWeight: 700 }}> blue</span> -
 					Wilric, a level 10 warlock - of which you can save a copy. If you're
-					logged in as a<span style={{ fontWeight: 700 }}> Guest</span> all of
-					your changes will only be
-					<span style={{ fontWeight: 700 }}> local.</span>
+					logged in as a<span style={{ fontWeight: 700 }}> Guest</span> there is
+					a limit of
+					<span style={{ fontWeight: 700 }}> 5</span> character sheets, if the
+					account is already at the limit feel free to delete one!
 				</p>
 			</div>
 
