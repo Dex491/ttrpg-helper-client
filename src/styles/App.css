@@ -150,6 +150,11 @@ header a,
 	background: #1976d2;
 }
 
+.disabled {
+	pointer-events: none;
+	transform: none;
+}
+
 /* CHARACTER SHEET */
 
 .sheet {

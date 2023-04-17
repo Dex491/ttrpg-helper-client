@@ -48,7 +48,7 @@ export default function CharacterSheet({ supabase, user, apiUrl }) {
 
 	useEffect(() => {
 		fetchCS();
-	}, []);
+	}, [user]);
 
 	//TODO: check if user is guest, if so fetch from local storage
 	const fetchCS = async () => {

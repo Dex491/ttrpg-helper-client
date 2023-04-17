@@ -8,7 +8,7 @@ export default function CharacterSheets({ supabase, user, apiUrl }) {
 
 	useEffect(() => {
 		fetchAllCS();
-	}, []);
+	}, [user]);
 
 	//TODO: check if user is guest, if so fetch from local storage
 	const fetchAllCS = async () => {
