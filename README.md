@@ -33,9 +33,9 @@ As of right now the primary function of this app is a D&D 5E character sheet cre
 
 ## App demo
 ### Login
-1) If you already have an account skip step 3&4
+1) If you already have an account (or want to just use the guest account) skip step 3&4
 2) Click the login button in the header
-3) Either provide your details or use the guest login (I won't judge)
+3) Provide the relevant details
 4) Check the email you've provided for a verification email
-5) Log in!
+5) Log in! (For the guest account you can use the details provided on screen)
 ### Creating a character
