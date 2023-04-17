@@ -4,4 +4,4 @@ A basic helper app made to be used alongside a TTRPG (Tabletop role-playing game
 For the server side of this project see: https://github.com/Dex491/ttrpg-helper-server
 
 
-Hosted version available at: https://ttrpg-helper-git-main-dex491.vercel.app
+Hosted version available [here](https://ttrpg-helper-git-main-dex491.vercel.app)
