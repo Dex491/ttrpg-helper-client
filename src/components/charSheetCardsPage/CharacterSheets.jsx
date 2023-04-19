@@ -29,7 +29,7 @@ export default function CharacterSheets({ supabase, user, apiUrl }) {
 					<span style={{ color: "#19a4d2", fontWeight: 700 }}> blue</span> -
 					Wilric, a level 10 warlock - of which you can save a copy. If you're
 					logged in as a<span style={{ fontWeight: 700 }}> Guest</span> there is
-					a limit of
+					a lower (than a normal account) limit of
 					<span style={{ fontWeight: 700 }}> 5</span> character sheets, if the
 					account is already at the limit feel free to delete one!
 				</p>

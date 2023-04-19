@@ -4,7 +4,7 @@ import SheetCard from "./SheetCard";
 
 export default function CardList({ characterSheets, user }) {
 	const data = characterSheets?.data;
-	let guestLimit;
+	let CSLimit;
 
 	const filteredData = characterSheets?.data
 		? data.filter((item) => item.userID === user.id)
@@ -14,7 +14,9 @@ export default function CardList({ characterSheets, user }) {
 		filteredData.length >= 5 &&
 		user.id === "62c46ef2-13cf-44eb-be20-7f97b2c29b8c"
 	) {
-		guestLimit = true;
+		CSLimit = true;
+	} else if (filteredData.length >= 10) {
+		CSLimit = true;
 	}
 	return (
 		<ul className="cardList">
@@ -34,11 +36,11 @@ export default function CardList({ characterSheets, user }) {
 				  ))
 				: "Loading"}
 
-			<li className={"newCharSheet" + (guestLimit ? " disabled" : "")}>
+			<li className={"newCharSheet" + (CSLimit ? " disabled" : "")}>
 				<Link
 					className="CSButton"
 					to={"/newCharacterSheet"}
-					onClick={guestLimit ? (e) => e.preventDefault() : null}
+					onClick={CSLimit ? (e) => e.preventDefault() : null}
 				>
 					+
 				</Link>

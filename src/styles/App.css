@@ -76,7 +76,21 @@ header a,
 	border-radius: 20px;
 	margin: 0 auto;
 	margin-top: 20vh;
-	margin-bottom: 20vh;
+	margin-bottom: 10vh;
+}
+
+.guest-container {
+	width: 400px;
+	text-align: center;
+	border: 2px solid gray;
+	border-radius: 20px;
+	margin: 0 auto;
+}
+
+.guest-container p {
+	margin-left: 50px;
+	margin-right: 50px;
+	font-size: 0.8rem;
 }
 
 /* HOME */
