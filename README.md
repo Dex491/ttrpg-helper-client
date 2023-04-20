@@ -39,3 +39,15 @@ As of right now the primary function of this app is a D&D 5E character sheet cre
 4) Check the email you've provided for a verification email
 5) Log in! (For the guest account you can use the details provided on screen)
 ### Creating a character
+1) Click on the Character Sheets button in the header
+2) Select either the sample character (Wilric) or create a new sheet by clicking the card with a plus icon
+3) Make any changes you wish in the various fields within the character sheet
+4) Save your changes by clicking the save copy/save button (based on whether you're using the sample sheet or created your own)
+### Updating a character
+If you were using the sample sheet - once you have saved redirected to the card view, if you wish to make any further changes click the new card that has been created.
+
+If you created an entirely new character - once you've saved you can continue on the same page to make changes.
+### Deleting a character
+Once you've created a character sheet you'll find a card for it in your character sheets page, If you wish to delete one of those sheets you may do the following:
+1) Click on the card for the character sheet you wish to delete
+2) Once the sheet has been opened click the delete button in the header
