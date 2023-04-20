@@ -27,7 +27,7 @@ As of right now the primary function of this app is a D&D 5E character sheet cre
 
 ## Running this project locally
 1) Fork and clone/clone to your machine
-2) `npm i`
+2) `npm i` to install the dependancies
 3) `npm run dev` if you want to run the dev build
 4) Follow the instructions for running the [server](https://github.com/Dex491/ttrpg-helper-server) locally
 
