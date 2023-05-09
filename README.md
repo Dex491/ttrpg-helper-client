@@ -1,4 +1,4 @@
-# ttrpg-helper
+# ttrpg-helper-client
 A basic helper app made to be used alongside a TTRPG (Tabletop role-playing game) session to help enhance the play experience by having everything a person (might) need in one place!
 
 For the server side of this project see: https://github.com/Dex491/ttrpg-helper-server
@@ -7,9 +7,9 @@ Hosted version available [here](https://ttrpg-helper-git-main-dex491.vercel.app)
 
 ## Table of contents
 - [General information](https://github.com/Dex491/ttrpg-helper-client#general-information)
-- [Tech stack](https://github.com/Dex491/ttrpg-helper-client/edit/main/README.md#general-information)
-- [Running this project locally](https://github.com/Dex491/ttrpg-helper-client/edit/main/README.md#general-information)
-- [App demo](https://github.com/Dex491/ttrpg-helper-client/edit/main/README.md#general-information)
+- [Tech stack](https://github.com/Dex491/ttrpg-helper-client#tech-stack)
+- [Running this project locally](https://github.com/Dex491/ttrpg-helper-client#running-this-project-locally)
+- [App demo](https://github.com/Dex491/ttrpg-helper-client#app-demo)
 
 ## General information
 This was built as my personal project in my final 2 weeks at the Boolean Course, I wanted to focus my project on something I'm passionate about so I chose to focus on something in the TTRPG space. I used [Vite](https://vitejs.dev) for initialising and dev hosting this project, it does a lot that I won't go into detail with here but the tl;dr is that it's just a lot faster than initialising with something like `create react app` (I'm sorry react, I love you but vanilla react is slow).
