@@ -6,7 +6,7 @@ For the server side of this project see: https://github.com/Dex491/ttrpg-helper-
 Hosted version available [here](https://ttrpg-helper-git-main-dex491.vercel.app)
 
 ## Table of contents
-- [General information](https://github.com/Dex491/ttrpg-helper-client/edit/main/README.md#general-information)
+- [General information](https://github.com/Dex491/ttrpg-helper-client#general-information)
 - [Tech stack](https://github.com/Dex491/ttrpg-helper-client/edit/main/README.md#general-information)
 - [Running this project locally](https://github.com/Dex491/ttrpg-helper-client/edit/main/README.md#general-information)
 - [App demo](https://github.com/Dex491/ttrpg-helper-client/edit/main/README.md#general-information)
