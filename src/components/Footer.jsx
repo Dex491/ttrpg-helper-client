@@ -1,5 +1,3 @@
-import { AppBar, Toolbar, Typography, Button } from "@mui/material";
-
 export default function Footer() {
 	return (
 		<div className="footer flex-no-margin">
